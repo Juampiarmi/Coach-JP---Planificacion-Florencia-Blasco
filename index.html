@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Coach JP — Performance Matrix</title>
+<title>Coach JP — Emilia Navarro Performance Matrix</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --fire: #00BFA5;
-    --fire-glow: #00E676;
+    --fire: #FF3D00;
+    --fire-glow: #FF6D00;
     --gold: #FFD600;
     --purple: #7C4DFF;
     --purple-light: #B39DDB;
@@ -64,7 +64,7 @@
     background: var(--fire);
     border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 0 14px rgba(0,191,165,0.35);
+    box-shadow: 0 0 14px rgba(255,61,0,0.35);
   }
   .nav-logo svg { width: 17px; height: 17px; fill: white; }
   .nav-wordmark {
@@ -77,14 +77,13 @@
   .nav-pill {
     font-size: 11px; font-weight: 600; letter-spacing: 0.07em;
     text-transform: uppercase; padding: 4px 11px; border-radius: 20px;
-    transition: all 0.2s ease;
   }
   .nav-pill.athletes {
     background: rgba(255,214,0,0.1); border: 1px solid rgba(255,214,0,0.25);
     color: var(--gold);
   }
   .nav-pill.week {
-    background: rgba(0,191,165,0.1); border: 1px solid rgba(0,191,165,0.25);
+    background: rgba(255,61,0,0.1); border: 1px solid rgba(255,61,0,0.25);
     color: var(--fire-glow);
   }
 
@@ -129,8 +128,6 @@
   }
   .day-tab:hover { background: rgba(255,255,255,0.03); }
   .day-tab.active { border-bottom-color: var(--fire); }
-  .day-tab.rest-day { opacity: 0.45; }
-  .day-tab.rest-day:hover { background: rgba(255,255,255,0.015); opacity: 0.55; cursor: pointer; }
   .day-tab.completed-day .day-dot { background: var(--teal) !important; box-shadow: 0 0 6px rgba(0,191,165,0.5); }
   .tab-name {
     font-family: 'Barlow Condensed', sans-serif;
@@ -145,7 +142,7 @@
     background: var(--text-muted); margin-top: 3px;
     transition: background 0.2s ease, box-shadow 0.2s ease;
   }
-  .day-tab.active .day-dot { background: var(--fire); box-shadow: 0 0 6px rgba(0,191,165,0.5); }
+  .day-tab.active .day-dot { background: var(--fire); box-shadow: 0 0 6px rgba(255,61,0,0.5); }
 
   /* ── PROGRESS BAR ── */
   .progress-bar-wrap {
@@ -188,7 +185,7 @@
   /* ── COMPLETE BUTTON ── */
   .day-complete-btn {
     background: rgba(0,191,165,0.1); border: 1px solid rgba(0,191,165,0.3);
-    color: var(--fire-glow); font-family: 'Barlow Condensed', sans-serif;
+    color: var(--teal); font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700; font-size: 0.9rem; letter-spacing: 0.07em;
     text-transform: uppercase; padding: 10px 22px;
     border-radius: var(--radius-md); cursor: pointer;
@@ -205,7 +202,7 @@
   .day-complete-btn:active { transform: scale(0.97); }
   .day-complete-btn.done {
     background: rgba(0,191,165,0.12); border-color: rgba(0,191,165,0.35);
-    color: var(--fire); box-shadow: 0 0 18px rgba(0,191,165,0.12);
+    color: var(--teal); box-shadow: 0 0 18px rgba(0,191,165,0.12);
   }
 
   /* ── BLOCKS ── */
@@ -252,19 +249,13 @@
   .bl-warmup   { color: #FFA726; }
   .bl-oly      { color: #64B5F6; }
   .bl-strength { color: var(--teal); }
-  .bl-metcon   { color: var(--fire-glow); }
+  .bl-metcon   { color: #FF3D00; }
   .bl-cardio   { color: #B39DDB; }
   .bl-accessory{ color: #B0BEC5; }
 
   .block-subtitle { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
   .block-chevron { color: var(--text-muted); font-size: 12px; transition: transform 0.22s ease; flex-shrink: 0; }
   .block.collapsed .block-chevron { transform: rotate(-90deg); }
-
-  .block-body {
-    padding: 0.9rem 1.1rem;
-    display: flex; flex-direction: column; gap: 0;
-  }
-  .block.collapsed .block-body { display: none; }
 
   /* ── SECTION LABEL ── */
   .section-label {
@@ -289,34 +280,51 @@
   .ex-name { font-size: 0.875rem; font-weight: 500; flex: 1; line-height: 1.45; color: var(--text-primary); }
   .ex-detail {
     font-size: 11.5px; color: var(--text-secondary);
-    text-align: right; flex-shrink: 0; line-height: 1.55; max-width: 155px;
-    min-width: 70px;
+    text-align: right; flex-shrink: 0; line-height: 1.55; max-width: 170px;
+    min-width: 80px;
   }
   .ex-detail strong {
     display: block; color: var(--text-primary); font-weight: 600; font-size: 13px;
   }
   .ex-detail .pct {
-    color: var(--fire-glow); font-weight: 700; font-size: 12.5px;
+    color: #FF6D00; font-weight: 700; font-size: 12.5px;
   }
+
+  .block-body {
+    padding: 0.9rem 1.1rem;
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .block.collapsed .block-body { display: none; }
 
   /* ── COMPLEX ROW ── */
   .ex-row.complex {
-    background: rgba(0,191,165,0.04);
-    border: 1px solid rgba(0,191,165,0.09);
+    background: rgba(255,61,0,0.04);
+    border: 1px solid rgba(255,61,0,0.09);
     border-radius: var(--radius-sm);
     padding: 0.6rem 0.75rem; margin: 0.3rem 0;
   }
 
   /* ── COACH NOTE ── */
   .coach-note {
-    background: rgba(0,191,165,0.05);
-    border-left: 2px solid rgba(0,191,165,0.4);
+    background: rgba(41,121,255,0.05);
+    border-left: 2px solid rgba(41,121,255,0.4);
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     padding: 0.65rem 0.9rem; margin-top: 0.75rem;
     font-size: 12.5px; color: #94A3B8; line-height: 1.6;
   }
   .coach-note strong {
-    color: var(--fire-glow); display: block; margin-bottom: 3px;
+    color: #64B5F6; display: block; margin-bottom: 3px;
+    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .scaling-note {
+    background: rgba(0,191,165,0.04);
+    border-left: 2px solid rgba(0,191,165,0.4);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 0.65rem 0.9rem; margin-top: 0.5rem;
+    font-size: 12.5px; color: #E2E8F0; line-height: 1.6;
+  }
+  .scaling-note strong {
+    color: var(--teal); display: block; margin-bottom: 3px;
     font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
   }
 
@@ -370,14 +378,18 @@
     .day-tab { min-width: 64px; padding: 0.65rem 0.7rem; }
     .tab-label { font-size: 9px; }
     .block-label { font-size: 0.85rem; }
-    .ex-detail { max-width: 120px; min-width: 60px; }
+    .ex-detail { max-width: 130px; min-width: 60px; }
     .day-complete-btn { font-size: 0.82rem; padding: 9px 16px; }
   }
 </style>
 </head>
 <body>
 
-<nav>
+<nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}>
   <a class="nav-brand" href="#">
     <div class="nav-logo">
       <svg viewBox="0 0 24 24"><path d="M13 2L4.09 12.99 12 12.01 11 22l8.91-10.99-7.91.98z"/></svg>
@@ -386,46 +398,41 @@
   </a>
   <div class="nav-right">
     <span class="nav-pill athletes">Emilia Navarro</span>
-    <span class="nav-pill week">Semana Descarga</span>
+    <span class="nav-pill week">Semana 1 de 6 (Carga)</span>
   </div>
 </nav>
 
 <section class="hero">
   <p class="hero-eyebrow">Performance Matrix — Alto Rendimiento</p>
-  <h1>Semana de <em>Descarga.</em></h1>
-  <p class="hero-sub">Programación de volumen regulado basada en acondicionamiento aeróbico y consistencia metabólica para Emilia Navarro.</p>
+  <h1>Semana de <em>Fuerza e Intensidad.</em></h1>
+  <p class="hero-sub">Estructura limpia de sobrecarga, demandas metabólicas de alta densidad y control estricto de volumen.</p>
 </section>
 
 <div class="week-tabs-wrap">
   <div class="week-tabs" id="week-tabs">
     <div class="day-tab active" data-day="0">
       <span class="tab-name">LUN</span>
-      <span class="tab-label">Barbell Cycle + EMOM</span>
+      <span class="tab-label">Squats + Metcon</span>
       <div class="day-dot"></div>
     </div>
     <div class="day-tab" data-day="1">
       <span class="tab-name">MAR</span>
-      <span class="tab-label">Workhorse V2</span>
+      <span class="tab-label">Gymnastics + WOD</span>
       <div class="day-dot"></div>
     </div>
     <div class="day-tab" data-day="2">
       <span class="tab-name">MIÉ</span>
-      <span class="tab-label">Pacing AMRAP</span>
-      <div class="day-dot"></div>
-    </div>
-    <div class="day-tab rest-day" data-day="3">
-      <span class="tab-name">JUE</span>
-      <span class="tab-label">Descanso / Trail</span>
+      <span class="tab-label">Weightlifting + Gym</span>
       <div class="day-dot"></div>
     </div>
     <div class="day-tab" data-day="4">
-      <span class="tab-name">VIE</span>
-      <span class="tab-label">Lactate Work + FS</span>
+      <span class="tab-name">JUE</span>
+      <span class="tab-label">Pulling Focus</span>
       <div class="day-dot"></div>
     </div>
     <div class="day-tab" data-day="5">
-      <span class="tab-name">SÁB</span>
-      <span class="tab-label">Pacing + Gym Bulk</span>
+      <span class="tab-name">VIE</span>
+      <span class="tab-label">Upper Strength</span>
       <div class="day-dot"></div>
     </div>
   </div>
@@ -446,7 +453,7 @@
     <div class="day-header">
       <div class="day-title-group">
         <div class="day-eyebrow">Lunes — Día 1</div>
-        <div class="day-title">Cardio Intervals + Back Squat + Gymnastic EMOM</div>
+        <div class="day-title">Contrast Back Squats + Cross-Rep Grip Metcon</div>
         <div class="day-athletes"><span class="athlete-chip">⚡ Emilia Navarro</span></div>
       </div>
       <button class="day-complete-btn" data-day="0">Marcar día completo</button>
@@ -458,71 +465,36 @@
           <div class="block-icon bi-warmup">🔥</div>
           <div class="block-header-text">
             <div class="block-label bl-warmup">Warm Up &amp; Activación</div>
-            <div class="block-subtitle">Engine EMOM + Empty Barbell Flow</div>
+            <div class="block-subtitle">Assault Bike + Carga Adaptativa Progresiva</div>
           </div>
           <span class="block-chevron">▼</span>
         </div>
         <div class="block-body">
-          <div class="section-label">Bloque 1 — Engine EMOM × 8 Minutos</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Min 1: Máquina Cardio 1</span><span class="ex-detail"><strong>50s trabajo</strong>10s rest</span></div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Min 2: Máquina Cardio 2</span><span class="ex-detail"><strong>50s trabajo</strong>10s rest</span></div>
-          <div class="section-label">Bloque 2 — Barra Vacía (2 Series)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">7 RDLs + 7 Strict Press + 7 Good Mornings de pie</span><span class="ex-detail">Flujo continuo</span></div>
-          <div class="section-label">Bloque 3 — Preparación Gimnástica (2 Series)</div>
-          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">10 Scapular Pull Ups + 10 Hollow Rocks + 10 Superman Rocks</span><span class="ex-detail">Activación core</span></div>
+          <div class="section-label">Bloque 1 — Fase General (2 Sets)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Assault Bike @ Ritmo fácil</span><span class="ex-detail"><strong>10 / 8 Cal</strong></span></div>
+          <div class="section-label">Bloque 2 — Fase de Carga Adaptativa (2-4 Sets)</div>
+          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">Subir peso de forma progresiva desde carga liviana hasta el peso fijado para A</span><span class="ex-detail">Preparación</span></div>
         </div>
       </div>
 
       <div class="block">
         <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-oly">⏱️</div>
+          <div class="block-icon bi-strength">🦵</div>
           <div class="block-header-text">
-            <div class="block-label bl-oly">Block A: Cardio Component</div>
-            <div class="block-subtitle">Cada 3:00 min × 5 Series · Ventana de ritmo constante</div>
+            <div class="block-label bl-strength">Block A: Fuerza — Contrast Squats</div>
+            <div class="block-subtitle">Alternando cada 90 segundos x 10 series totales</div>
           </div>
           <span class="block-chevron">▼</span>
         </div>
         <div class="block-body">
-          <div class="section-label">Intervalos Metabólicos</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">250m Row (Remo) + 15 Russian KB Swings (Pesado) + 10 Burpees</span><span class="ex-detail">5 Vueltas</span></div>
-          <div class="coach-note"><strong>Coach Target</strong>Tu objetivo es tardar entre 1:40 y 1:50 por set, asegurándote un minuto completo de descanso en cada ventana de 3 minutos.</div>
-        </div>
-      </div>
-
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-strength"></div>
-          <div class="block-header-text">
-            <div class="block-label bl-strength">Block B: Strength — Squats</div>
-            <div class="block-subtitle">Back Squat controlado + EMOM Estructural</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">B1 — Back Squat (Series de volumen progresivo · Rest 2:00)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">1×10 @ 60% | 1×8 @ 65% | 1×8 @ 70% | 1×6 @ 75% | 1×4 @ 80%</span><span class="ex-detail"><strong>5 sets</strong>Carga fija</span></div>
-          <div class="section-label">B2 — Alternating EMOM × 12 Minutos</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Min 1: DB Leg Extension x 20 reps | Min 2: Reverse Nordics x 10 reps | Min 3: Calf Raises x 20 reps</span><span class="ex-detail">Calidad estricta</span></div>
-        </div>
-      </div>
-
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-metcon">💥</div>
-          <div class="block-header-text">
-            <div class="block-label bl-metcon">Block C: High Intensity Metcon</div>
-            <div class="block-subtitle">EMOM × 16 Minutos · Pacing sostenido</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">C1 — 4 Rondas (45s ON / 15s OFF)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Min 1: BikeErg (Pace constante) | Min 2: Kipping HSPU | Min 3: Toes to Bar (TTB) | Min 4: REST</span><span class="ex-detail">4 Rondas</span></div>
+          <div class="section-label">Esquema de Contraste Potente</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Series PARES (2, 4, 6, 8, 10): 3 Back Squats</span><span class="ex-detail"><span class="pct">@ 80% RM</span></span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Series IMPARES (1, 3, 5, 7, 9): 6 Jumping Squats (Doble mancuerna)</span><span class="ex-detail"><strong>Carga moderada</strong></span></div>
           
-          <div class="block-insights insights-metcon">
-            <div class="insights-header">💡 Estrategia del Coach</div>
+          <div class="block-insights insights-strength">
+            <div class="insights-header">🦵 Enfoque de Ejecución</div>
             <div class="insights-body">
-              <div class="insight-item"><span class="insight-icon">🎯</span><div class="insight-content"><div class="insight-label">Estrategia</div><div class="insight-text">Buscá un RPE 7-8 de base. En el EMOM principal, definí un conteo de repeticiones cómodo y plano desde la primera ronda (ej. 8 HSPU y 12 TTB) y mantenelo plano las 4 vueltas.</div></div></div>
+              <div class="insight-item"><span class="insight-icon">🎯</span><div class="insight-content"><div class="insight-label">Objetivo y Tips</div><div class="insight-text">Desarrollar fuerza absoluta con transferencia explosiva. En los Back Squats buscá profundidad de competencia con pecho arriba. En los Jumping Squats, amortiguá la caída conectando de inmediato. El foco real está en el 80%.</div></div></div>
             </div>
           </div>
         </div>
@@ -530,17 +502,21 @@
 
       <div class="block">
         <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-metcon">🚀</div>
+          <div class="block-icon bi-metcon">💥</div>
           <div class="block-header-text">
-            <div class="block-label bl-metcon">Block D: Optional Metcon Finisher</div>
-            <div class="block-subtitle">AMRAP 9 Minutos · Escalera ascendente de volumen</div>
+            <div class="block-label bl-metcon">Block C: Trabajo Metabólico Cruzado</div>
+            <div class="block-subtitle">For Time · Grip Focus · Time Cap: 17:00</div>
           </div>
           <span class="block-chevron">▼</span>
         </div>
         <div class="block-body">
-          <div class="section-label">Opcional Finisher — Escalera Ascendente (3-6-9-12...)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Burpees + Pull Ups</span><span class="ex-detail">AMRAP 9'</span></div>
-          <div class="coach-note"><strong>Coach Note:</strong> Regulá el aire de forma inteligente y usalo para acumular volumen limpio de tracción si el cuerpo se siente recuperado. Buscá mantener una cadencia constante sin llegar al fallo muscular prematuro.</div>
+          <div class="section-label">Estructura Descendiente de TTB / Ascendiente de Snatch</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">6 Hang Power Snatch (Carga escalada: 25 - 30 kg) + 35 Toes to Bar (TTB)</span><span class="ex-detail">Ronda 1</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">9 Hang Power Snatch + 28 Toes to Bar</span><span class="ex-detail">Ronda 2</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">12 Hang Power Snatch + 21 Toes to Bar</span><span class="ex-detail">Ronda 3</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">15 Hang Power Snatch + 14 Toes to Bar</span><span class="ex-detail">Ronda 4</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">18 Hang Power Snatch + 7 Toes to Bar</span><span class="ex-detail">Ronda 5</span></div>
+          <div class="coach-note"><strong>Estrategia del Coach:</strong> Cuidado con el agarre. Los Hang Snatches demandan antebrazo, igual que colgarse de la barra. Los Snatches deben salir unbroken o en un máximo de 2 tandas en las rondas altas. Si tu máximo invicto son 20, abrí la ronda de 35 con series de 7 a 10 repeticiones con descansos cortos planificados. No busques el fallo temprano.</div>
         </div>
       </div>
 
@@ -548,14 +524,20 @@
         <div class="block-header" onclick="toggleBlock(this)">
           <div class="block-icon bi-accessory">🎯</div>
           <div class="block-header-text">
-            <div class="block-label bl-accessory">Block E: Accessory &amp; Core Struct</div>
-            <div class="block-subtitle">Hollow Rocks + Plancha + Vuelos hombro posterior</div>
+            <div class="block-label bl-accessory">Block D: Accesorios y Zona Media</div>
+            <div class="block-subtitle">3 bloques específicos de superserie por calidad</div>
           </div>
           <span class="block-chevron">▼</span>
         </div>
         <div class="block-body">
-          <div class="section-label">3 Rondas por calidad sin pausa interna</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">20 Hollow Rocks → Rest 15s → 20-30s Plank Hold antebrazos → Rest 15s → 15 Reverse Flys livianos</span><span class="ex-detail">3 vueltas</span></div>
+          <div class="section-label">Superserie 1 (4 Rondas · Rest 90s)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">6 a 10 Banded Ring Dips (Fondos en anillas asistidos con banda)</span><span class="ex-detail">—</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">6 a 10 Straight Leg Raises desde posición de soporte en anillas</span><span class="ex-detail">—</span></div>
+          <div class="section-label">Superserie 2 (4 Rondas · Rest 60s)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">10 Pallof Press con banda gruesa por lado + 10 Shoulder External Rotations (mancuerna liviana/disco)</span><span class="ex-detail">Salud manguito</span></div>
+          <div class="section-label">Superserie 3 (4 Rondas · Rest 90s)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">10 Landmine Anti-Rotations (carga pesada) + 20 Russian Plate Twists en Hollow Body</span><span class="ex-detail">Core</span></div>
+          <div class="scaling-note"><strong>Nota de Ejecución:</strong> Cero balanceo. En las anillas, controlá el descenso hasta que el hombro toque la cinta. En el Pallof Press y Landmine, la cadera se queda congelada al frente; la fuerza nace del core. Esto es calidad, no velocidad.</div>
         </div>
       </div>
 
@@ -567,7 +549,7 @@
     <div class="day-header">
       <div class="day-title-group">
         <div class="day-eyebrow">Martes — Día 2</div>
-        <div class="day-title">Long Aerobic Engine — Workhorse V2</div>
+        <div class="day-title">Gymnastics Strongman + Fraccionado Glicolítico</div>
         <div class="day-athletes"><span class="athlete-chip">⚡ Emilia Navarro</span></div>
       </div>
       <button class="day-complete-btn" data-day="1">Marcar día completo</button>
@@ -578,40 +560,18 @@
         <div class="block-header" onclick="toggleBlock(this)">
           <div class="block-icon bi-warmup">🔥</div>
           <div class="block-header-text">
-            <div class="block-label bl-warmup">Warm Up &amp; Activación</div>
-            <div class="block-subtitle">Cardio progresivo + Preparación neuromuscular</div>
+            <div class="block-label bl-warmup">Warm Up Específico</div>
+            <div class="block-subtitle">Intervalos de Assault Bike + Postural Clean Flow</div>
           </div>
           <span class="block-chevron">▼</span>
         </div>
         <div class="block-body">
-          <div class="section-label">Bloque 1 — Cardio Base</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Bici × 2 minutos + Remo × 1 minuto</span><span class="ex-detail">Aumento de ritmo</span></div>
-          <div class="section-label">Bloque 2 — Activación General</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">10 Inchworm Push Ups + 20 Calf Raises + 10 Plank Down-Ups + 10 Burpees</span><span class="ex-detail">1 Serie continua</span></div>
-          <div class="section-label">Bloque 3 — Target Específico</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">90s Bici (pace de WOD) + 30 Double Unders + 6 Lateral Burpees</span><span class="ex-detail">Alineación</span></div>
-        </div>
-      </div>
-
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-metcon">💥</div>
-          <div class="block-header-text">
-            <div class="block-label bl-metcon">Metcon Aeróbico — Workhorse V2</div>
-            <div class="block-subtitle">Pieza extendida de resistencia cardiovascular · Cap 35:00</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">For Time — Resistencia muscular continua</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Run 2000 metros → 50 Burpees Box Jump Overs → 250 Double Unders → 50 Wall Balls → Run 1000 metros</span><span class="ex-detail">Cap: 35:00</span></div>
-          
-          <div class="block-insights insights-metcon">
-            <div class="insights-header">💥 Estrategia de Volumen</div>
-            <div class="insights-body">
-              <div class="insight-item"><span class="insight-icon">💡</span><div class="insight-content"><div class="insight-label">Estrategia</div><div class="insight-text">Gran pieza aeróbica pura. Dividí los 250 saltos dobles en bloques cortos (ej. sets de 50) con microdescansos de 5s para que no se te disparen las pulsaciones. El WOD se gana administrando las transiciones de forma inteligente.</div></div></div>
-            </div>
-          </div>
+          <div class="section-label">Bloque 1 — Cardio (6 Sets)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">250m Assault Bike @ Aumentando el paso (pace) en cada serie</span><span class="ex-detail">Rest 30s e/sets</span></div>
+          <div class="section-label">Bloque 2 — Barra Vacía (2 Series)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">7 Muscle Clean desde cadera + 7 Front Squats + 7 Hang Power Clean (3s pausa en recepción)</span><span class="ex-detail">—</span></div>
+          <div class="section-label">Bloque 3 — Fase Específica (4-6 Sets)</div>
+          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">3 Hang Squat Cleans (Construyendo carga de forma progresiva)</span><span class="ex-detail">Preparación</span></div>
         </div>
       </div>
 
@@ -619,18 +579,54 @@
         <div class="block-header" onclick="toggleBlock(this)">
           <div class="block-icon bi-strength">💪</div>
           <div class="block-header-text">
-            <div class="block-label bl-strength">Gymnastic Strength &amp; Hipertrofia</div>
-            <div class="block-subtitle">Series estrictas por patrones aislados · Rest 2:00</div>
+            <div class="block-label bl-strength">Block A: Gymnastics &amp; Strongman Component</div>
+            <div class="block-subtitle">5 Series por tiempo · Target: Sub 2:00 por ronda · Rest 1:1</div>
           </div>
           <span class="block-chevron">▼</span>
         </div>
         <div class="block-body">
-          <div class="section-label">B1 — Bloque de Tracción (3 Series completas)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">1 Legless Rope Climb + 8 Strict Pull Ups + 12 Dual DB Bicep Curls</span><span class="ex-detail">Rest 2:00</span></div>
-          <div class="section-label">B2 — Bloque de Empuje (3 Series completas)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">7 Ring Dips (Estrictos) + 15 Push Ups (Impecables) + 20 Banded Tricep Extensions</span><span class="ex-detail">Rest 2:00</span></div>
-          <div class="section-label">C — Accesorio Estructural</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">YTWs × 21 repeticiones + Dual KB Bottoms-Up Rack Hold × 20–30s</span><span class="ex-detail">3–4 Series</span></div>
+          <div class="section-label">Estaciones consecutivas integradas</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">7 Handstand Push Ups (HSPU) con máximo déficit desafiante</span><span class="ex-detail">Unbroken</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">10 metros Sandbag Bearhug Carry (Carga pesada)</span><span class="ex-detail">Unbroken</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">10 metros Handstand Walk (Caminata de manos, dividida en 5m/5m o 4-5 intentos de máxima distancia)</span><span class="ex-detail">Foco Invertido</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">10 metros Sandbag Bearhug Carry (Carga pesada)</span><span class="ex-detail">Compresión</span></div>
+          <div class="coach-note"><strong>Tips del Coach:</strong> El entrenamiento se gana en las transiciones. No te quedes mirando la pared. En el Bearhug con el Sandbag, apretá la bolsa contra el pecho y trabá las manos; mantené pasos cortos y rápidos. En el HSW, controlá la respiración y apretá los glúteos.</div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-header" onclick="toggleBlock(this)">
+          <div class="block-icon bi-metcon">💥</div>
+          <div class="block-header-text">
+            <div class="block-label bl-metcon">Block B: Capacidad Glicolítica Pura</div>
+            <div class="block-subtitle">Metcon fraccionado de alta intensidad con recuperación fija</div>
+          </div>
+          <span class="block-chevron">▼</span>
+        </div>
+        <div class="block-body">
+          <div class="section-label">Bloque 1 — Por Tiempo (Time Cap: 6:00)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">21 - 15 - 9 · Wall Balls + Burpees Box Jump Overs</span><span class="ex-detail">Intensidad Máxima</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">REST Obligatorio de 4:00 minutos al finalizar la última repetición</span><span class="ex-detail">Recuperación Parcial</span></div>
+          <div class="section-label">Bloque 2 — Por Tiempo (Time Cap: 6:00)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">100 Double Unders + 45 Wall Balls + 100 Double Unders</span><span class="ex-detail">Resistencia</span></div>
+          <div class="scaling-note"><strong>Modificaciones del Balón:</strong> Si no podés completar más de 30 Wall Balls seguidas estando descansada, bajá el peso del balón de inmediato para mantener la intensidad alta. Los saltos del burpee se hacen de frente a la estructura. En los burpees, usá los brazos para amortiguar el aterrizaje de forma limpia.</div>
+        </div>
+      </div>
+
+      <div class="block collapsed">
+        <div class="block-header" onclick="toggleBlock(this)">
+          <div class="block-icon bi-accessory">🎯</div>
+          <div class="block-header-text">
+            <div class="block-label bl-accessory">Block C: Accessories</div>
+            <div class="block-subtitle">Holds estáticos y tracción controlada horizontal</div>
+          </div>
+          <span class="block-chevron">▼</span>
+        </div>
+        <div class="block-body">
+          <div class="section-label">Trabajo D1 (3 Rondas)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">45 segundos Dual Kettlebell Overhead Hold</span><span class="ex-detail">Rest 45s e/sets</span></div>
+          <div class="section-label">Trabajo D2 (4 Rondas)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">20 segundos Horizontal Ring Rows + 20 segundos Rest + 20 segundos Chest to Ring Hold + 20 segundos Rest</span><span class="ex-detail">Isometría pura</span></div>
         </div>
       </div>
 
@@ -642,7 +638,7 @@
     <div class="day-header">
       <div class="day-title-group">
         <div class="day-eyebrow">Miércoles — Día 3</div>
-        <div class="day-title">Cardio Intervals + Mid-Week AMRAP</div>
+        <div class="day-title">Weightlifting Focus + Gymnastics High Grip Density</div>
         <div class="day-athletes"><span class="athlete-chip">⚡ Emilia Navarro</span></div>
       </div>
       <button class="day-complete-btn" data-day="2">Marcar día completo</button>
@@ -653,18 +649,38 @@
         <div class="block-header" onclick="toggleBlock(this)">
           <div class="block-icon bi-warmup">🔥</div>
           <div class="block-header-text">
-            <div class="block-label bl-warmup">Warm Up &amp; Activación</div>
-            <div class="block-subtitle">SkiErg intervalos + Bodyweight flow + KB Work</div>
+            <div class="block-label bl-warmup">Warm Up de Activación</div>
+            <div class="block-subtitle">Fase de activación, potenciación y barra vacía</div>
           </div>
           <span class="block-chevron">▼</span>
         </div>
         <div class="block-body">
-          <div class="section-label">Bloque 1 — Cardio Starter</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">SkiErg (30s On / 15s Off)</span><span class="ex-detail"><strong>6–8 sets</strong>Buen estímulo</span></div>
-          <div class="section-label">Bloque 2 — Movilidad de Base</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">10 Air Squats (Pausa de 2s abajo) + 10 Push Ups + 15 Sit Ups</span><span class="ex-detail">2 Series</span></div>
-          <div class="section-label">Bloque 3 — Cargas Ligeras</div>
-          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">10 KB Goblet Squats + 10 KB Halos (Alrededor de la cabeza)</span><span class="ex-detail">2 Series</span></div>
+          <div class="section-label">Fase de Activación (2 Series)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">60s Máquina de Cardio (Fácil) + 10 Box Step Ups con doble DB/KB overhead (liviano)</span><span class="ex-detail">—</span></div>
+          <div class="section-label">Fase Potenciada (2 Series)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">60s Máquina de Cardio (Moderado a Intenso) + 7 Barbell Muscle Snatch + 7 Barbell BTN Push Press</span><span class="ex-detail">—</span></div>
+          <div class="section-label">Fase Específica (4-6 Series subiendo peso)</div>
+          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">3 Power Snatch con 3 segundos de pausa obligatoria en la recepción</span><span class="ex-detail">Estabilidad</span></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-header" onclick="toggleBlock(this)">
+          <div class="block-icon bi-oly">🏋️‍♂️</div>
+          <div class="block-header-text">
+            <div class="block-label bl-oly">Block A: Weightlifting Focus (40 Minutos)</div>
+            <div class="block-subtitle">Velocidad terminal, tracción pura y Snatch Balance pesado</div>
+          </div>
+          <span class="block-chevron">▼</span>
+        </div>
+        <div class="block-body">
+          <div class="section-label">A1 — Ventana técnica estricta (Every 20s x 18 reps)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">1 Power Snatch con 3s de pausa en recepción</span><span class="ex-detail"><span class="pct">@ 70% RM</span><br>Precisión limpia</span></div>
+          <div class="section-label">A2 — Complejo de Construcción (5-6 Sets de carga + 4 Sets de Calidad)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">1 Snatch Pull + 1 Power Snatch (Subir hasta cerca del 90%)</span><span class="ex-detail"><span class="pct">@ 90% RM</span></span></div>
+          <div class="section-label">A3 — Inserción Dinámica Vertical (Every 90s x 6 reps)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">1 Snatch Balance (Minimizá la flexión previa de piernas, velocidad pura abajo)</span><span class="ex-detail"><strong>9/10 RPE</strong><br>Carga pesada</span></div>
+          <div class="coach-note"><strong>Estrategia del Coach:</strong> En el A1, el margen es mínimo; de inmediato reajustá la postura en el piso. En el Snatch Balance, la barra no sube porque empujes mucho con las piernas; sube porque vos te empujás activamente hacia abajo de ella.</div>
         </div>
       </div>
 
@@ -672,71 +688,30 @@
         <div class="block-header" onclick="toggleBlock(this)">
           <div class="block-icon bi-cardio">⏱️</div>
           <div class="block-header-text">
-            <div class="block-label bl-cardio">Block A — Cardio Metcon Intervals</div>
-            <div class="block-subtitle">Intervalos fraccionados de umbral aeróbico</div>
+            <div class="block-label bl-cardio">Block B: Gymnastics Density (16-30 Minutos)</div>
+            <div class="block-subtitle">EMOM x 16 Minutos de fatiga de agarre sostenida</div>
           </div>
           <span class="block-chevron">▼</span>
         </div>
         <div class="block-body">
-          <div class="section-label">Cada 4:00 minutos × 4 Series</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">15/12 Cal Bici (Echo o Assault) + 15 Box Jumps (Step down obligatorio) + 15 American KB Swings</span><span class="ex-detail">Ventana de 4'</span></div>
-          <div class="coach-note"><strong>Coach Pacing Target</strong>Buscá que cada set te tome de 2:00 a 2:15, dándote un descanso simétrico de casi 1:1 en cada intervalo. Mantener vatios estables.</div>
-        </div>
-      </div>
-
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-metcon">💥</div>
-          <div class="block-header-text">
-            <div class="block-label bl-metcon">Block B — Metcon Volume AMRAP</div>
-            <div class="block-subtitle">AMRAP 20 Minutos · Ritmo plano controlado</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">20 Minute AMRAP (Rest 1:00 obligatorio por ronda completa)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">21 GHD Sit Ups → 18 Alternating DB Snatches (22.5 / 15 kg) → 15 Pull Ups</span><span class="ex-detail">Ritmo plano</span></div>
-          <div class="section-label">Block C — Posterior Chain Struct (3 Series por calidad)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">20 Reverse Hyperextensions + Sandbag Bearhug Hold × 45–60 segundos</span><span class="ex-detail">Isometría</span></div>
-          
-          <div class="block-insights insights-metcon">
-            <div class="insights-header">💥 Estrategia de Transición</div>
-            <div class="insights-body">
-              <div class="insight-item"><span class="insight-icon">💡</span><div class="insight-content"><div class="insight-label">Estrategia</div><div class="insight-text">El minuto de descanso en el AMRAP no es para recuperar del todo, es para tomar agua o ponerte magnesio. No salgas esprintando la primera ronda, mantené un paso robótico y repetible. Al terminar, rodá 10 minutos suaves en bici para aflojar.</div></div></div>
-            </div>
-          </div>
+          <div class="section-label">B1 — Estructura del minuto activo</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Minuto 1: 2 a 3 Trepadas a la soga (Rope Climbs)</span><span class="ex-detail">Traba de pies segura</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Minuto 2: 15 Toes to Bar (TTB - Máximo 1 corte, idealmente unbroken)</span><span class="ex-detail">Grip Fry / Mínimo 20s rest</span></div>
+          <div class="section-label">C2 — Superserie de Calidad Postural (3 a 5 Rondas)</div>
+          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">21 YTWs (7 por dirección con discos livianos) + 15-20 Hollow Rocks → Rest 30s → 5-10 Ring Support Pulses + 30s Arch Hold → Rest 30s</span><span class="ex-detail">Calidad estricta</span></div>
+          <div class="scaling-note">Si en el minuto 2 los TTB se desarman y terminás haciendo series muy cortas, bajá la cantidad a 12 repeticiones fijas de inmediato. Necesitás la ventana de descanso para no arruinar la soga que sigue.</div>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- ══════════ JUEVES — DESCANSO ACTIVE ══════════ -->
-  <div class="day-view" id="day-3">
-    <div class="day-header">
-      <div class="day-title-group">
-        <div class="day-eyebrow">Jueves — Día 4</div>
-        <div class="day-title">Active Recovery Focus</div>
-      </div>
-    </div>
-    <div class="rest-view">
-      <div class="rest-icon">💤</div>
-      <h2>Rest Day</h2>
-      <p>Día de descarga central. Priorizá la hidratación, una caminata ligera o masajes de liberación miofascial con foam roller.</p>
-      <div class="rest-checklist">
-        <div class="rest-check-item">💧 <span>Hidratación profunda: mínimo 3L</span></div>
-        <div class="rest-check-item">🧘 <span>Masajes dinámicos / Foam Rolling</span></div>
-        <div class="rest-check-item">🍎 <span>Mantener cargas óptimas de carbohidratos</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════ VIERNES ══════════ -->
+  <!-- ══════════ JUEVES ══════════ -->
   <div class="day-view" id="day-4">
     <div class="day-header">
       <div class="day-title-group">
-        <div class="day-eyebrow">Viernes — Día 5</div>
-        <div class="day-title">Interval Lactate Metcon + Front Squat Volume</div>
+        <div class="day-eyebrow">Jueves — Día 4</div>
+        <div class="day-title">Strict Pulling Strength + High Volume Metabolic EMOM</div>
         <div class="day-athletes"><span class="athlete-chip">⚡ Emilia Navarro</span></div>
       </div>
       <button class="day-complete-btn" data-day="4">Marcar día completo</button>
@@ -747,18 +722,33 @@
         <div class="block-header" onclick="toggleBlock(this)">
           <div class="block-icon bi-warmup">🔥</div>
           <div class="block-header-text">
-            <div class="block-label bl-warmup">Warm Up &amp; Activación</div>
-            <div class="block-subtitle">BikeErg + Mobility flow + Ritmo WOD</div>
+            <div class="block-label bl-warmup">Warm Up &amp; Posterior Chain Pull</div>
+            <div class="block-subtitle">Remo fraccionado de activación continua</div>
           </div>
           <span class="block-chevron">▼</span>
         </div>
         <div class="block-body">
-          <div class="section-label">Bloque 1 — Cardio Block</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">BikeErg (90s On / 30s Off)</span><span class="ex-detail">3 Series</span></div>
-          <div class="section-label">Bloque 2 — Movilidad Dinámica</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">10 Pass Throughs con bastón + 10 Scapular Push Ups + 5 Inchworms</span><span class="ex-detail">2 Series</span></div>
-          <div class="section-label">Bloque 3 — Ritmo Específico WOD</div>
-          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">30s Running + 5 Dumbbell Thrusters livianos + 5 Burpees over the DB</span><span class="ex-detail">2 Series</span></div>
+          <div class="section-label">Fase Cardiovascular Estable (10 Series)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">200 metros Remo @ Aumentando la intensidad de esfuerzo de forma progresiva</span><span class="ex-detail">Rest 20s e/sets</span></div>
+          <div class="coach-note">Los descansos de 20s hacen que este calentamiento funcione como un intervalo continuo. Dedicá de 5 a 8 minutos posteriores a subir peso progresivamente para la barra de la parte A.</div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-header" onclick="toggleBlock(this)">
+          <div class="block-icon bi-strength">💪</div>
+          <div class="block-header-text">
+            <div class="block-label bl-strength">Block A: Pulling Strength (20 Minutos)</div>
+            <div class="block-subtitle">4 a 6 Series de calidad con descanso interno mínimo</div>
+          </div>
+          <span class="block-chevron">▼</span>
+        </div>
+        <div class="block-body">
+          <div class="section-label">Aislamiento y compensación de Kipping</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">5 a 7 Banded Pull Ups (Dominadas estrictas asistidas con banda elástica)</span><span class="ex-detail">Tracción pura</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">10 Bicep Curls con doble mancuerna</span><span class="ex-detail">Controlado</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">20 Seated Banded Low Rows (Remo bajo sentado con banda elástica)</span><span class="ex-detail">Rest 2:00 e/sets</span></div>
+          <div class="coach-note">En las dominadas estrictas, iniciá el movimiento deprimiendo las escápulas (alejando los hombros de las orejas) antes de flexionar los codos. Barbilla sobre la barra de forma sólida. Las 20 reps con banda deben quemar.</div>
         </div>
       </div>
 
@@ -766,53 +756,49 @@
         <div class="block-header" onclick="toggleBlock(this)">
           <div class="block-icon bi-metcon">💥</div>
           <div class="block-header-text">
-            <div class="block-label bl-metcon">Block A — Lactate Buffer Metcon</div>
-            <div class="block-subtitle">5 Rondas intensas con recuperación parcial</div>
+            <div class="block-label bl-metcon">Block B: Trabajo de Resistencia Metabólica (Big EMOM)</div>
+            <div class="block-subtitle">Alternating EMOM x 28-40 Minutos · Capacidad Aeróbica Basal</div>
           </div>
           <span class="block-chevron">▼</span>
         </div>
         <div class="block-body">
-          <div class="section-label">AMRAP de 3:00 / REST de 2:00 × 5 vueltas completas</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">400 metros Run + 15 Dual DB Thrusters + Max reps Burpees Over the DB en tiempo restante</span><span class="ex-detail">Score total burpees</span></div>
-          
-          <div class="block-insights insights-metcon">
-            <div class="insights-header">💥 Consistencia del Metcon</div>
-            <div class="insights-body">
-              <div class="insight-item"><span class="insight-icon">⚡</span><div class="insight-content"><div class="insight-label">Estrategia</div><div class="insight-text">Controlá la velocidad de carrera para no llegar ahogado a las mancuernas. Los Thrusters tienen que salir en una o máximo dos series rápidas. El marcador son los burpees: buscá mantener el mismo número de reps en todas las rondas.</div></div></div>
-            </div>
-          </div>
+          <div class="section-label">Distribución cíclica por minutos</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Minuto 1: 15 Pull Ups (Volumen estricto/Kipping controlado)</span><span class="ex-detail">Gimnasia</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Minuto 2: 7 Hang Power Cleans (Carga fijada: 40 kg) + 7 Box Jumps (60 cm / 50 cm)</span><span class="ex-detail">Potencia</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Minuto 3: 15 Burpees (Ritmo robótico constante)</span><span class="ex-detail">Cardio</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Minuto 4: Descanso completo obligatorio</span><span class="ex-detail">Oxigenación</span></div>
+          <div class="coach-note">Elegí la duración total (28, 32, 36 o 40 minutos) según tu nivel de energía diario. En los Box Jumps extendé la cadera por completo arriba del cajón. Si los burpees te toman más de 50s, bajá la meta a 12 de inmediato.</div>
         </div>
       </div>
 
-      <div class="block">
+      <div class="block collapsed">
         <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-strength">🦵</div>
+          <div class="block-icon bi-accessory">🎯</div>
           <div class="block-header-text">
-            <div class="block-label bl-strength">Block B — Strength Front Squats</div>
-            <div class="block-subtitle">Volumen de fuerza de base aeróbica basal</div>
+            <div class="block-label bl-accessory">Block C: Accessory &amp; Core Structural</div>
+            <div class="block-subtitle">3 Estaciones complejas de calidad de zona media</div>
           </div>
           <span class="block-chevron">▼</span>
         </div>
         <div class="block-body">
-          <div class="section-label">Front Squats — Series rítmicas estables</div>
-          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">4 Series × 8 Repeticiones</span><span class="ex-detail"><span class="pct">@ 60-65% RM</span><br>Rest: 90s</span></div>
-          <div class="coach-note">Buscamos repeticiones fluidas con tempo controlado, manteniendo de manera rigurosa el tono muscular sin estresar el sistema nervioso central.</div>
-          
-          <div class="section-label">Block C — Accessory Struct (3 Series por calidad)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">D1: DB Hamstring Curls × 8 reps (bajada de 3s) + Banded KB Swings × 15-20 reps. Rest 90s.</span><span class="ex-detail">Cadena Posterior</span></div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">D2: Prone Y-Raises × 10 reps + Poliquin Raises × 10 reps + Band Pull Aparts × 20 reps</span><span class="ex-detail">Rest 60s / Liviano</span></div>
+          <div class="section-label">Trabajo C1 (2 a 4 Sets · Rest 60s)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">30 Single Leg Banded Reverse Crunches (15 por pierna) + 30 Russian Plate Twists</span><span class="ex-detail">—</span></div>
+          <div class="section-label">Trabajo C2 (2 a 4 Sets · Rest 60-90s)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">30 segundos de Side Plank Adductor Holds (Plancha lateral con pierna superior apoyada) por lado</span><span class="ex-detail">Aductores</span></div>
+          <div class="section-label">Trabajo C3 (2 a 4 Sets · Rest 60s)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">10 Banded Thoracic Openers por lado + 5 Kettlebell Windmills por lado</span><span class="ex-detail">Estabilidad</span></div>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- ══════════ SÁBADO ══════════ -->
+  <!-- ══════════ VIERNES ══════════ -->
   <div class="day-view" id="day-5">
     <div class="day-header">
       <div class="day-title-group">
-        <div class="day-eyebrow">Sábado — Día 6</div>
-        <div class="day-title">Negative Splits + Gym Bulk + Synced Partner</div>
+        <div class="day-eyebrow">Viernes — Día 5</div>
+        <div class="day-title">Upper Push Strength + Escala Ascendente Metcon (Rest 1:1)</div>
         <div class="day-athletes"><span class="athlete-chip">⚡ Emilia Navarro</span></div>
       </div>
       <button class="day-complete-btn" data-day="5">Marcar día completo</button>
@@ -823,34 +809,18 @@
         <div class="block-header" onclick="toggleBlock(this)">
           <div class="block-icon bi-warmup">🔥</div>
           <div class="block-header-text">
-            <div class="block-label bl-warmup">Warm Up &amp; Activación General</div>
-            <div class="block-subtitle">Echo Bike progresiva + saltos + carrera pedestre</div>
+            <div class="block-label bl-warmup">Warm Up &amp; Deltoid Flow</div>
+            <div class="block-subtitle">Remo progresivo + Activación neuromuscular de empuje</div>
           </div>
           <span class="block-chevron">▼</span>
         </div>
         <div class="block-body">
-          <div class="section-label">Bloque 1 — Echo Bike</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Echo Bike (Subiendo vatios por minuto de forma controlada)</span><span class="ex-detail"><strong>5 minutos</strong>—</span></div>
-          <div class="section-label">Bloque 2 — Estructura Postural</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">20 Mountain Climbers + 20 Saltos Simples + 10 Lunge Steps (Sin peso)</span><span class="ex-detail">3 Series</span></div>
-          <div class="section-label">Bloque 3 — Carrera Base</div>
-          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">Carrera a pie a ritmo suave / regenerativo regulado</span><span class="ex-detail"><strong>800 metros</strong>—</span></div>
-        </div>
-      </div>
-
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-cardio">⏱️</div>
-          <div class="block-header-text">
-            <div class="block-label bl-cardio">Block A — Cardio Intervals (Negative Splits)</div>
-            <div class="block-subtitle">Gestión métrica estricta en intervalos largos</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">4 Sets For Time · Rest 2:00 minutos exactos entre series</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">50 Toes to Bar (TTB) + 800 metros Run + 50 Box Jump Overs</span><span class="ex-detail">4 Vueltas</span></div>
-          <div class="coach-note"><strong>Pacing Metrónomo:</strong> Tu meta es que la diferencia de tiempo entre tus sets no sea mayor a 20 segundos, intentando que cada vuelta sea un poco más rápida que la anterior (Look de negative split).</div>
+          <div class="section-label">Fase 1 (2 Series)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">30 segundos Remo (Fácil) + 10 Band Pull Aparts + 10 Banded Passovers</span><span class="ex-detail">—</span></div>
+          <div class="section-label">Fase 2 (2 Series)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">30 segundos Remo (Moderado) + 10 Alternating Dumbbell Strict Press (5 por brazo)</span><span class="ex-detail">—</span></div>
+          <div class="section-label">Fase Específica (2 a 4 Series)</div>
+          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">Strict Press con Barra x 5 repeticiones (Construyendo el peso terminal para la parte A1)</span><span class="ex-detail">—</span></div>
         </div>
       </div>
 
@@ -858,46 +828,55 @@
         <div class="block-header" onclick="toggleBlock(this)">
           <div class="block-icon bi-strength">💪</div>
           <div class="block-header-text">
-            <div class="block-label bl-strength">Block B — Strength Base &amp; Gym Bulk</div>
-            <div class="block-subtitle">Bench press fijo + bloques de aislamiento estricto</div>
+            <div class="block-label bl-strength">Block A: Upper Strength (25 Minutos)</div>
+            <div class="block-subtitle">Strict Press bajo tiempo límite + Heavy Push Press</div>
           </div>
           <span class="block-chevron">▼</span>
         </div>
         <div class="block-body">
-          <div class="section-label">B1 — Barbell Bench Press (Carga fija · Rest 60s)</div>
-          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">Barbell Bench Press (Mismo peso todos los sets)</span><span class="ex-detail"><strong>8 Sets × 2 reps</strong>@ 80% RM</span></div>
-          
-          <div class="section-label">B2 a B5 — Aislamiento (3 Series · Rest 60s · RIR 2)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">B2: Single Arm DB Bent Over Rows (Bajada muy lenta controlada en 3s)</span><span class="ex-detail">6 reps / Pesado</span></div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">B3: Barbell Skull Crushers (Tríceps)</span><span class="ex-detail">12 reps</span></div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">B4: Barbell Preacher Curls (Bíceps - Soporte en el pad de GHD)</span><span class="ex-detail">12 reps</span></div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">B5: Dual DB Lateral Raises (Hombro lateral)</span><span class="ex-detail">12 reps</span></div>
-          <div class="coach-note">Cada una de las series de aislamiento de B2 a B5 debe empujarte cerca del límite, dejando unas 2 repeticiones en reserva (RIR 2). Si se siente cómodo, subir peso de inmediato.</div>
+          <div class="section-label">A1 — Capacidad de Empuje Puro (Every 90s x 5 Series)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">10 Burpee Box Jump Overs (BBJO) + 10 Barbell Strict Press al 40% del Max Max</span><span class="ex-detail"><strong>Time Cap: 60s por round</strong></span></div>
+          <div class="scaling-note">Si no completás dentro de los 60s (lo cual garantiza 30s de descanso fijos), bajá las repeticiones del press de inmediato en 2 o reducí el peso un 5-10% en la siguiente ronda.</div>
+          <div class="section-label">A2 — Potencia Lumbar y Bloqueo (Every 2:00 x 5 Series)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">5 Push Press al 80% del Max → Remate: 1 x AMRAP (Max reps posibles) de Push Press al 70%</span><span class="ex-detail">Lockout de 1s arriba</span></div>
         </div>
       </div>
 
       <div class="block">
         <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-metcon">🔥</div>
+          <div class="block-icon bi-oly">🤸‍♂️</div>
           <div class="block-header-text">
-            <div class="block-label bl-metcon">Block C — Partner Metcon Finisher</div>
-            <div class="block-subtitle">3 Rondas For Time en pareja · Sincronía coordinativa</div>
+            <div class="block-label bl-oly">Block C: Desarrollo Opcional de HSPU (10 Minutos)</div>
+            <div class="block-subtitle">EMOM x 10 Minutos · Volumen técnico de empuje invertido</div>
           </div>
           <span class="block-chevron">▼</span>
         </div>
         <div class="block-body">
-          <div class="section-label">3 Rondas For Time en Parejas</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">30 Dual DB Push Press (Carga moderada) + 30 Toes to Bar (Sincronizados) + 40 Goblet Box Step Ups</span><span class="ex-detail">KB 24/16 · 50cm</span></div>
-          
-          <div class="block-insights insights-metcon">
-            <div class="insights-header">🔥 Sincronía del WOD</div>
-            <div class="insights-body">
-              <div class="insight-item"><span class="insight-icon">💡</span><div class="insight-content"><div class="insight-label">Estrategia</div><div class="insight-text">En el Partner WOD, dividan los Push Press en series cortas de 5 o 10 reps para mantener la barra moviéndose rápido. En los Box Step Ups, un atleta pisa el cajón solo cuando el compañero bajó por completo y tocó el suelo con ambos pies. Mantengan un ritmo constante.</div></div></div>
-            </div>
+          <div class="section-label">Realizar entre 2 y 6 repeticiones de Handstand Push Ups según escala actual</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Opción A: Chest-facing-wall (mirando a la pared) todas las vueltas</span><span class="ex-detail">6 repeticiones</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Opción B: Alternar vueltas mirando a la pared (2-3 reps) con strict tradicional (4-6 reps)</span><span class="ex-detail">—</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Opción C: HSPU Estrictos tradicionales con un número fijo y sostenible en cada minuto</span><span class="ex-detail">2 a 4 repeticiones</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Opción D: Min 1 al 5: 4-6 Pike Strict Push Ups (Pies en cajón) | Min 6 al 10: 2-6 Kipping HSPU</span><span class="ex-detail">—</span></div>
+          <div class="coach-note">En la posición mirando a la pared (Opción A y B), mantené el core en tensión activa de Hollow; no permitas que la espalda se curve. El apoyo de las manos debe formar un trípode limpio con tu cabeza. Sostené el número plano sin fallar.</div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="block-header" onclick="toggleBlock(this)">
+          <div class="block-icon bi-metcon">💥</div>
+          <div class="block-header-text">
+            <div class="block-label bl-metcon">Block D: Trabajo Metabólico Escalera (Rest 1:1)</div>
+            <div class="block-subtitle">12 Minute AMRAP · Estricto Formato de Intervalo Individual</div>
           </div>
-          
-          <div class="section-label">D — Core Final Structural (3–4 Series · Rest 60s)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Banded Tricep Extensions × 30 reps + Dual DB Bicep Curls × 15 reps + Ring Plank Hold × 30–45s</span><span class="ex-detail">Calidad pro</span></div>
+          <span class="block-chevron">▼</span>
+        </div>
+        <div class="block-body">
+          <div class="section-label">Progresión ascendente de Thrusters (Saltos dobles estables en 35)</div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">35 Double Unders + 3 Dual Dumbbell Thrusters</span><span class="ex-detail">Ronda 1 (Rest 1:1)</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">35 Double Unders + 6 Dual Dumbbell Thrusters</span><span class="ex-detail">Ronda 2 (Rest 1:1)</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">35 Double Unders + 9 Dual Dumbbell Thrusters</span><span class="ex-detail">Ronda 3 (Rest 1:1)</span></div>
+          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">35 Double Unders + 12 Dual Dumbbell Thrusters</span><span class="ex-detail">Ronda 4... sube +3</span></div>
+          <div class="coach-note"><strong>Estrategia Terminal del Coach:</strong> En los Thrusters con mancuernas, apoyá las cabezas de las pesas en los hombros de forma firme. Usá la fuerza de la extensión de la sentadilla para lanzar las mancuernas hacia arriba; si empujás antes de tiempo con los brazos, te vas a cansar el doble de rápido. El entrenamiento es corto (12 minutos) y los saltos se mantienen fijos. Cuando llegues a la ronda de 12 o 15, mentalizate para ir unbroken. Al trabajar solo, la relación de descanso 1:1 es estricta; cronometrá cuánto tardás en hacer el set y descansá exactamente ese mismo tiempo antes de saltar a la soga.</div>
         </div>
       </div>
 
@@ -911,8 +890,8 @@
   'use strict';
 
   const TOTAL_ACTIVE_DAYS = 5; 
-  const STORAGE_KEY_COMPLETED = 'emilia_completed_days_v3';
-  const STORAGE_KEY_COLLAPSED = 'emilia_collapsed_blocks_v3';
+  const STORAGE_KEY_COMPLETED = 'cjp_completed_days_v4';
+  const STORAGE_KEY_COLLAPSED = 'cjp_collapsed_blocks_v4';
 
   const completedDays = new Set();
 
