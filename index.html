@@ -2,946 +2,1316 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Coach JP — Performance Hub [Emilia Navarro]</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<meta name="theme-color" content="#0E0E0F" />
+<meta name="description" content="Coach JP — Mesociclo Fuerza / Hipertrofia, Semana 1 · Emilia Navarro" />
+<title>Coach JP — Plan Individual · Emilia Navarro</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23FF3D00'/%3E%3Cpath d='M13 4L6.5 13.5 12 13l-1 6.5 6.5-9.5-5.5.5z' fill='white'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root {
     --fire: #FF3D00;
-    --fire-glow: #FF6D3A;
+    --fire-glow: #FF6D00;
     --gold: #FFD600;
-    --violet: #7C4DFF;
-    --violet-light: #B39DDB;
-    --teal: #00897B;
-    --teal-light: #4DB6AC;
-    --bg: #0A0A0B;
-    --bg-card: #121214;
-    --bg-card-hover: #1A1A1E;
-    --bg-filter: #0F0F11;
-    --text-primary: #F5F5F7;
-    --text-secondary: #A0A0AA;
-    --text-muted: #52525B;
-    --border: rgba(255, 255, 255, 0.06);
-    --border-active: rgba(255, 61, 0, 0.4);
+    --purple: #7C4DFF;
+    --purple-light: #B39DDB;
+    --teal: #00BFA5;
+    --blue: #2979FF;
+    --blue-light: #64B5F6;
+    --orange: #FFA726;
+    --bg: #0E0E0F;
+    --bg-card: #161617;
+    --bg-card-hover: #1C1C1E;
+    --bg-surface: #111112;
+    --bg-elevated: #1A1A1B;
+    --text-primary: #F2F2F2;
+    --text-secondary: #8A8A8A;
+    --text-muted: #484848;
+    --border: rgba(255,255,255,0.07);
+    --border-subtle: rgba(255,255,255,0.04);
     --radius-sm: 8px;
     --radius-md: 12px;
-    --radius-lg: 16px;
+    --radius-lg: 18px;
     --radius-xl: 24px;
+    --shadow-sm: 0 2px 10px -2px rgba(0,0,0,0.35);
+    --shadow-md: 0 10px 28px -8px rgba(0,0,0,0.5);
+    --shadow-lg: 0 24px 64px -16px rgba(0,0,0,0.65);
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scrollbar-color: var(--border) transparent; scrollbar-width: thin; }
   body {
-    background:
-      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0) 0 0/28px 28px,
-      url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width='1500' height='480' viewBox='0 0 1500 480'%3E%3Cpath d='M-20,410 C140,390 240,440 360,400 C500,352 540,260 700,280 C860,300 900,190 1060,160 C1220,130 1300,60 1520,20 L1520,480 L-20,480 Z' fill='rgba%28255,61,0,0.028%29'%2F%3E%3Cpath d='M-20,410 C140,390 240,440 360,400 C500,352 540,260 700,280 C860,300 900,190 1060,160 C1220,130 1300,60 1520,20' fill='none' stroke='rgba%28255,141,66,0.16%29' stroke-width='2.5' stroke-linecap='round'%2F%3E%3Ccircle cx='1520' cy='20' r='5' fill='rgba%28255,214,0,0.4%29'%2F%3E%3C%2Fsvg%3E") right top/1500px 480px no-repeat,
-      radial-gradient(ellipse 1100px 560px at 18% -8%, rgba(255,61,0,0.08), transparent 62%),
-      radial-gradient(ellipse 900px 520px at 100% 8%, rgba(124,77,255,0.06), transparent 58%),
-      radial-gradient(ellipse 700px 480px at 92% 96%, rgba(0,137,123,0.05), transparent 55%),
-      linear-gradient(180deg, #0B0B0D 0%, var(--bg) 40%, #08080A 100%);
-    background-attachment: fixed;
+    background: var(--bg);
     color: var(--text-primary);
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
     font-size: 15px;
     line-height: 1.6;
+    padding-bottom: 3rem;
+    position: relative;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
   }
-  ::-webkit-scrollbar { width: 8px; height: 8px; }
-  ::-webkit-scrollbar-track { background: var(--bg); }
-  ::-webkit-scrollbar-thumb { background: #27272A; border-radius: 4px; }
-  ::-webkit-scrollbar-thumb:hover { background: #3F3F46; }
-  :focus-visible { outline: 2px solid var(--fire-glow); outline-offset: 2px; border-radius: 4px; }
+  ::selection { background: rgba(255,61,0,0.35); color: #fff; }
+  ::-webkit-scrollbar { height: 6px; width: 6px; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.16); }
+
+  /* ── AMBIENT BACKGROUND ── */
+  .bg-glow {
+    position: fixed; inset: 0; z-index: -2; pointer-events: none;
+    background:
+      radial-gradient(ellipse 900px 600px at 12% -8%, rgba(255,61,0,0.13), transparent 60%),
+      radial-gradient(ellipse 700px 520px at 108% 8%, rgba(0,191,165,0.09), transparent 55%),
+      radial-gradient(ellipse 800px 620px at 45% 115%, rgba(124,77,255,0.08), transparent 60%),
+      var(--bg);
+    animation: bgDrift 18s ease-in-out infinite alternate;
+  }
+  .bg-grid {
+    position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 42px 42px;
+    -webkit-mask-image: radial-gradient(ellipse 100% 55% at 50% 0%, black 5%, transparent 72%);
+    mask-image: radial-gradient(ellipse 100% 55% at 50% 0%, black 5%, transparent 72%);
+  }
+  @keyframes bgDrift {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(1.12); }
+  }
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
   }
+
   /* ── NAVBAR ── */
   nav {
-    position: sticky;
-    top: 0;
-    z-index: 200;
-    background: rgba(10, 10, 11, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    position: sticky; top: 0; z-index: 200;
+    background: rgba(14,14,15,0.97);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    box-shadow: 0 12px 32px -18px rgba(0,0,0,0.8);
+    padding: 0 1.25rem; height: 58px;
+    display: flex; align-items: center; justify-content: space-between;
   }
-  .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-  .nav-logo-icon {
-    position: relative;
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(155deg, #FF6A3D 0%, var(--fire) 48%, #C41E00 100%);
-    border-radius: 11px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    overflow: hidden;
+  .nav-brand { display: flex; align-items: center; gap: 13px; text-decoration: none; }
+  .nav-logo {
+    width: 46px; height: 46px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(155deg, #FF9248 0%, var(--fire) 42%, #8E1300 100%);
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
     box-shadow:
-      0 6px 18px rgba(255, 61, 0, 0.38),
-      inset 0 1px 0 rgba(255, 255, 255, 0.4),
-      inset 0 -8px 12px rgba(0, 0, 0, 0.28),
-      inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+      0 0 0 2px rgba(0,0,0,0.65),
+      0 0 0 3.5px rgba(255,255,255,0.12),
+      0 10px 22px -6px rgba(255,61,0,0.6),
+      inset 0 2px 3px rgba(255,255,255,0.4),
+      inset 0 -5px 9px rgba(0,0,0,0.5);
+    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
   }
-  .nav-logo-icon::before {
-    content: '';
-    position: absolute;
-    inset: -60% -60% auto -60%;
-    height: 60%;
-    background: linear-gradient(180deg, rgba(255,255,255,0.4), transparent 70%);
-    transform: rotate(-8deg);
-    pointer-events: none;
+  .nav-brand:hover .nav-logo {
+    transform: rotate(-6deg) scale(1.09);
+    box-shadow:
+      0 0 0 2px rgba(0,0,0,0.65),
+      0 0 0 3.5px rgba(255,255,255,0.2),
+      0 12px 28px -6px rgba(255,61,0,0.75),
+      inset 0 2px 3px rgba(255,255,255,0.45),
+      inset 0 -5px 9px rgba(0,0,0,0.5);
   }
-  .nav-logo-icon svg { position: relative; width: 22px; height: 22px; z-index: 1; filter: drop-shadow(0 1px 1px rgba(0,0,0,0.25)); }
-  .nav-brand-text {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: 2.2rem;
-    letter-spacing: 0.06em;
-    color: var(--text-primary);
-    line-height: 1;
-    text-transform: uppercase;
+  .nav-logo svg {
+    width: 25px; height: 25px; transform: rotate(-4deg);
+    filter: drop-shadow(0 1.5px 1px rgba(0,0,0,0.65));
   }
-  .nav-brand-text span { color: var(--fire); }
-  .nav-brand-wordmark { display: flex; flex-direction: column; line-height: 1; }
-  .nav-brand-tag { display: block; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); margin-top: 4px; }
-  .nav-right { display: flex; align-items: center; gap: 10px; }
-  .nav-badge { background: rgba(255, 61, 0, 0.1); border: 1px solid rgba(255, 61, 0, 0.2); color: var(--fire-glow); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
-  .nav-badge.secondary { background: rgba(255,214,0,0.1); border-color: rgba(255,214,0,0.25); color: var(--gold); }
+  .nav-logo svg path { fill: #fff; stroke: rgba(0,0,0,0.4); stroke-width: 0.6; stroke-linejoin: round; }
+  .nav-wordmark {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.6rem;
+    letter-spacing: 0.02em; color: var(--text-primary); white-space: nowrap;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.55);
+    display: inline-block; position: relative; padding-bottom: 3px;
+  }
+  .nav-wordmark::after {
+    content: ''; position: absolute; left: 1px; right: 2px; bottom: -2px; height: 3px;
+    background: linear-gradient(90deg, var(--fire) 55%, transparent);
+    border-radius: 2px;
+  }
+  .nav-wordmark span { color: var(--fire); text-shadow: 0 2px 0 rgba(0,0,0,0.55), 0 0 18px rgba(255,61,0,0.4); }
+  .nav-right { display: flex; align-items: center; gap: 8px; }
+  .nav-pill {
+    position: relative; font-size: 11px; font-weight: 600; letter-spacing: 0.07em;
+    text-transform: uppercase; padding: 5px 12px; border-radius: 20px;
+    transition: all 0.2s ease; border: 1px solid transparent; background: none;
+    font-family: 'Inter', sans-serif; cursor: pointer;
+  }
+  .athlete-pill { background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--text-secondary); }
+  .athlete-pill:hover:not(.active) { color: var(--text-primary); border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.07); }
+  .athlete-pill.active { background: rgba(255,214,0,0.1); border-color: rgba(255,214,0,0.3); color: var(--gold); }
+  .calc-pill { background: rgba(255,61,0,0.1); border: 1px solid rgba(255,61,0,0.25); color: var(--fire-glow); }
+  .calc-pill:hover { border-color: rgba(255,61,0,0.5); box-shadow: 0 0 14px rgba(255,61,0,0.18); transform: translateY(-1px); }
+  .athlete-switch { display: flex; gap: 4px; background: var(--bg-elevated); border-radius: 20px; padding: 3px; }
+  :focus-visible { outline: 2px solid var(--fire-glow); outline-offset: 2px; border-radius: 4px; }
+
   /* ── HERO ── */
-  .hero { padding: 3rem 2rem 2.5rem; max-width: 1200px; margin: 0 auto; }
-  .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fire); margin-bottom: 0.75rem; }
-  .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.05; letter-spacing: 0.01em; margin-bottom: 1rem; }
+  .hero { position: relative; padding: 1.75rem 1.25rem 1.5rem; max-width: 1140px; margin: 0 auto; overflow: hidden; }
+  .hero::before {
+    content: ''; position: absolute; right: -60px; top: -70px; width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(255,61,0,0.16), transparent 70%);
+    filter: blur(4px); pointer-events: none; z-index: 0;
+  }
+  .hero::after {
+    content: '⚡'; position: absolute; right: -6px; top: -34px; font-size: 190px; line-height: 1;
+    opacity: 0.035; pointer-events: none; z-index: 0; transform: rotate(8deg);
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .brand-tagline { font-size: 0.78rem; color: var(--text-secondary); font-weight: 500; margin-bottom: 0.6rem; max-width: 520px; line-height: 1.5; }
+  .hero-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fire); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px; }
+  .hero-eyebrow::before { content: ''; width: 16px; height: 1px; background: var(--fire); display: inline-block; }
+  .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(1.9rem, 5.5vw, 3rem); line-height: 1.05; letter-spacing: 0.01em; margin-bottom: 0.5rem; }
   .hero h1 em { font-style: normal; color: var(--fire); }
-  .hero-sub { color: var(--text-secondary); font-size: 1rem; max-width: 720px; margin-bottom: 1.5rem; }
-  .hero-stats { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; align-items: center; }
-  .stat-pill { display: flex; align-items: center; gap: 8px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 30px; padding: 8px 16px; font-size: 13px; color: var(--text-secondary); }
-  .stat-pill b { color: var(--text-primary); font-weight: 600; }
-  .stat-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--fire); flex-shrink: 0; }
-  .progress-wrap { flex: 1 1 260px; min-width: 220px; max-width: 360px; }
-  .progress-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
-  .progress-label b { color: var(--text-primary); }
-  .progress-track { height: 8px; border-radius: 20px; background: rgba(255,255,255,0.06); overflow: hidden; }
-  .progress-fill { height: 100%; border-radius: 20px; background: linear-gradient(90deg, var(--fire), var(--gold)); width: 0%; transition: width 0.5s cubic-bezier(0.4,0,0.2,1); }
-  .reset-btn { background: none; border: 1px solid var(--border); color: var(--text-muted); font-size: 12px; font-weight: 600; padding: 7px 14px; border-radius: 20px; cursor: pointer; font-family: 'Inter', sans-serif; transition: border-color 0.25s cubic-bezier(0.16,1,0.3,1), color 0.25s ease, transform 0.2s ease; }
-  .reset-btn:hover { border-color: rgba(255,61,0,0.4); color: var(--fire-glow); transform: translateY(-1px); }
-  /* ── WEEK OVERVIEW (glassmorphism box) ── */
-  .mesociclo-box {
-    position: relative;
-    background: linear-gradient(160deg, rgba(124,77,255,0.07), rgba(255,61,0,0.02) 60%, rgba(124,77,255,0.03));
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid transparent;
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    margin: 2rem auto 0;
-    max-width: 1200px;
-    font-size: 14px;
-    color: var(--text-secondary);
-    box-shadow: 0 20px 50px -24px rgba(0,0,0,0.6);
-  }
-  .mesociclo-box::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(160deg, rgba(124,77,255,0.5), rgba(255,255,255,0.06) 40%, rgba(255,61,0,0.18) 80%, rgba(124,77,255,0.35));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-  }
-  .mesociclo-box h3 { font-family: 'Barlow Condensed', sans-serif; color: var(--violet-light); font-size: 1.3rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.75rem; letter-spacing: 0.05em; }
-  .mesociclo-box strong { color: var(--text-primary); }
-  .mesociclo-box ul { margin-top: 0.8rem; padding-left: 0; list-style: none; }
-  .mesociclo-box li { display: flex; gap: 0.75rem; padding: 8px 10px; border-radius: 8px; border: 1px solid transparent; }
-  .week-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,0.06); color: var(--text-secondary); font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
-  .mesociclo-warning { margin-top: 1rem; padding: 10px 14px; background: rgba(255, 61, 0, 0.04); border-left: 3px solid var(--fire); border-radius: 4px; color: var(--text-primary); font-size: 13px; }
-  /* ── DAY TABS ── */
-  .day-tabs-wrap {
-    background: var(--bg-filter);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    position: sticky; top: 75px; z-index: 100;
-    overflow-x: auto;
-  }
-  .day-tabs-wrap::-webkit-scrollbar { display: none; }
-  .day-tabs {
-    max-width: 1200px; margin: 0 auto;
-    display: flex; padding: 0 2rem;
-    min-width: max-content;
-  }
-  .day-tab {
-    display: flex; flex-direction: column; align-items: center;
-    padding: 0.85rem 1.3rem; cursor: pointer;
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s ease;
-    gap: 3px; min-width: 88px;
-    user-select: none;
-  }
+  .hero-sub { color: var(--text-secondary); font-size: 0.9rem; max-width: 520px; }
+
+  /* ── WEEK TABS ── */
+  .week-tabs-wrap { background: rgba(14,14,15,0.95); border-bottom: 1px solid var(--border); position: sticky; top: 58px; z-index: 100; overflow-x: auto; }
+  .week-tabs-wrap::-webkit-scrollbar { display: none; }
+  .week-tabs { max-width: 1140px; margin: 0 auto; display: flex; padding: 0 1.25rem; min-width: max-content; }
+  .day-tab { display: flex; flex-direction: column; align-items: center; padding: 0.7rem 1.1rem; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s ease; gap: 2px; min-width: 80px; user-select: none; }
   .day-tab:hover { background: rgba(255,255,255,0.03); }
   .day-tab.active { border-bottom-color: var(--fire); }
-  .tab-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700; font-size: 0.9rem; letter-spacing: 0.06em;
-    text-transform: uppercase; color: var(--text-secondary);
-    transition: color 0.2s;
-  }
+  .day-tab.rest-day { opacity: 0.45; }
+  .day-tab.rest-day:hover { background: rgba(255,255,255,0.015); opacity: 0.55; }
+  .day-tab.completed-day .day-dot { background: var(--teal) !important; box-shadow: 0 0 6px rgba(0,191,165,0.5); }
+  .tab-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-secondary); transition: color 0.2s; }
   .day-tab.active .tab-name { color: var(--fire-glow); }
-  .tab-label { font-size: 10px; color: var(--text-muted); letter-spacing: 0.02em; white-space: nowrap; }
-  .day-dot {
-    width: 5px; height: 5px; border-radius: 50%;
-    background: var(--text-muted); margin-top: 2px;
-    transition: background 0.2s ease, box-shadow 0.2s ease;
-  }
-  .day-tab.completed-day .day-dot { background: var(--fire); box-shadow: 0 0 6px rgba(255,61,0,0.5); }
+  .tab-label { font-size: 10px; color: var(--text-muted); letter-spacing: 0.04em; white-space: nowrap; }
+  .day-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--text-muted); margin-top: 3px; transition: background 0.2s ease, box-shadow 0.2s ease; }
+  .day-tab.active .day-dot { background: var(--fire); box-shadow: 0 0 6px rgba(255,61,0,0.5); }
+
+  /* ── PROGRESS BAR ── */
+  .progress-bar-wrap { max-width: 1140px; margin: 0 auto; padding: 0.8rem 1.25rem 0; }
+  .progress-row { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+  .progress-track { flex: 1; height: 4px; background: rgba(255,255,255,0.06); border-radius: 2px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--fire), var(--fire-glow)); border-radius: 2px; box-shadow: 0 0 10px rgba(255,109,0,0.5); transition: width 0.45s cubic-bezier(0.4,0,0.2,1); }
+  .progress-label { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+  .progress-count { font-size: 12px; color: var(--text-secondary); font-weight: 600; white-space: nowrap; }
+
   /* ── MAIN LAYOUT ── */
-  .main { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
+  .main { max-width: 1140px; margin: 0 auto; padding: 0 1.25rem 4rem; }
   .day-view { display: none; }
-  .day-view.active { display: block; }
-  .day-header {
-    display: flex; align-items: flex-start; justify-content: space-between;
-    gap: 1rem; margin-bottom: 1.5rem; padding-top: 2rem; flex-wrap: wrap;
-  }
-  .day-eyebrow {
-    font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.35rem;
-  }
-  .day-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900; font-size: clamp(1.7rem, 4vw, 2.4rem);
-    letter-spacing: 0.01em; line-height: 1.1;
-  }
-  .day-athletes { display: flex; gap: 7px; margin-top: 0.6rem; flex-wrap: wrap; }
-  .athlete-chip {
-    background: rgba(255,61,0,0.08); border: 1px solid rgba(255,61,0,0.2);
-    color: var(--fire-glow); font-size: 11px; font-weight: 700;
-    padding: 3px 10px; border-radius: 20px; letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-  /* ── COMPLETE BUTTON ── */
-  .day-complete-btn {
-    background: var(--fire); border: none;
-    color: white; font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700; font-size: 1rem; letter-spacing: 0.06em;
-    text-transform: uppercase; padding: 11px 24px;
-    border-radius: var(--radius-md); cursor: pointer;
-    transition: background 0.25s cubic-bezier(0.16,1,0.3,1), transform 0.2s ease, box-shadow 0.3s ease;
-    white-space: nowrap; align-self: flex-start;
-  }
-  .day-complete-btn:hover { background: #FF5722; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(255,61,0,0.3); }
-  .day-complete-btn:active { transform: translateY(0) scale(0.98); }
-  .day-complete-btn.done { background: var(--teal); box-shadow: 0 4px 12px rgba(0,137,123,0.2); }
-  .day-complete-btn.done:hover { background: #00796B; }
+  .day-view.active { display: block; animation: dayFadeIn 0.4s cubic-bezier(0.16,1,0.3,1); }
+  @keyframes dayFadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .day-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; padding-top: 1.5rem; flex-wrap: wrap; }
+  .day-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.3rem; }
+  .day-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(1.5rem, 4vw, 2.1rem); letter-spacing: 0.01em; line-height: 1.1; }
+  .day-athletes { display: flex; gap: 7px; margin-top: 0.5rem; flex-wrap: wrap; }
+  .athlete-chip { background: rgba(255,214,0,0.08); border: 1px solid rgba(255,214,0,0.2); color: #C8A600; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.05em; }
+  .athlete-chip.muted { background: rgba(255,255,255,0.03); border-color: var(--border); color: var(--text-muted); }
+
+  .day-complete-btn { background: rgba(0,191,165,0.1); border: 1px solid rgba(0,191,165,0.3); color: var(--teal); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.07em; text-transform: uppercase; padding: 10px 22px; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s ease; white-space: nowrap; align-self: flex-start; }
+  .day-complete-btn:hover { border-color: rgba(0,191,165,0.5); box-shadow: 0 0 16px rgba(0,191,165,0.15); transform: translateY(-1px); }
+  .day-complete-btn:active { transform: scale(0.97); }
+  .day-complete-btn.done { background: rgba(0,191,165,0.16); border-color: rgba(0,191,165,0.4); box-shadow: 0 0 18px rgba(0,191,165,0.12); }
+
+  /* ── REST BANNER (per-athlete recommended rest) ── */
+  .rest-banner { border-radius: var(--radius-lg); padding: 16px 18px; margin-bottom: 1.25rem; background: rgba(255,61,0,0.06); border: 1px solid rgba(255,61,0,0.25); box-shadow: var(--shadow-sm); display: flex; gap: 12px; }
+  .rest-banner .rb-icon { font-size: 1.3rem; line-height: 1.2; }
+  .rest-banner-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--fire-glow); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 4px; }
+  .rest-banner-text { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.55; }
+  .rest-banner-check { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 0.8rem; font-weight: 600; color: var(--text-primary); cursor: pointer; }
+  .rest-banner-check input { accent-color: var(--fire); width: 16px; height: 16px; }
+
   /* ── BLOCKS ── */
-  .blocks-stack { display: flex; flex-direction: column; gap: 1.1rem; }
+  .blocks-stack { display: flex; flex-direction: column; gap: 1rem; }
   .block {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    transition: transform 0.32s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease, box-shadow 0.4s ease, background 0.3s ease;
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
+    overflow: hidden; box-shadow: var(--shadow-sm);
+    transition: border-color 0.2s ease, opacity .2s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    animation: blockFadeIn 0.45s cubic-bezier(0.16,1,0.3,1) backwards;
   }
-  .block:hover {
-    border-color: rgba(255,61,0,0.28);
-    background: var(--bg-card-hover);
-    box-shadow:
-      0 0 0 1px rgba(255,61,0,0.08),
-      0 0 36px -8px rgba(255,61,0,0.22),
-      0 18px 34px -18px rgba(0,0,0,0.6);
-  }
-  .block-header {
-    display: flex; align-items: center; gap: 12px;
-    padding: 1rem 1.25rem;
-    background: rgba(255,255,255,0.015);
-    border-bottom: 1px solid var(--border);
-    cursor: pointer; user-select: none;
-    transition: background 0.2s ease;
-  }
-  .block-header:hover { background: rgba(255,255,255,0.03); }
+  .block:hover { border-color: rgba(255,255,255,0.13); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .block.block-done { opacity: 0.55; }
+  @keyframes blockFadeIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .blocks-stack .block:nth-child(1) { animation-delay: 0.02s; }
+  .blocks-stack .block:nth-child(2) { animation-delay: 0.07s; }
+  .blocks-stack .block:nth-child(3) { animation-delay: 0.12s; }
+  .blocks-stack .block:nth-child(4) { animation-delay: 0.17s; }
+  .blocks-stack .block:nth-child(5) { animation-delay: 0.22s; }
+  .blocks-stack .block:nth-child(6) { animation-delay: 0.27s; }
+  .blocks-stack .block:nth-child(n+7) { animation-delay: 0.32s; }
+  .block-header { display: flex; align-items: center; gap: 10px; padding: 0.85rem 1.1rem; border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; transition: background 0.2s ease; }
+  .block-header:hover { background: rgba(255,255,255,0.025); }
   .block.collapsed .block-header { border-bottom-color: transparent; }
-  .block-icon {
-    width: 32px; height: 32px; border-radius: 9px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 15px; flex-shrink: 0;
-    transition: transform 0.2s ease;
-  }
+  .block-icon { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; transition: transform 0.2s ease; }
   .block-header:hover .block-icon { transform: scale(1.08); }
-  .bi-warmup    { background: rgba(255,214,0,0.12); border: 1px solid rgba(255,214,0,0.16); }
-  .bi-strength  { background: rgba(255,61,0,0.12);  border: 1px solid rgba(255,61,0,0.16); }
-  .bi-oly       { background: rgba(124,77,255,0.14); border: 1px solid rgba(124,77,255,0.18); }
-  .bi-metcon    { background: rgba(0,137,123,0.14);  border: 1px solid rgba(0,137,123,0.18); }
-  .bi-accessory { background: rgba(255,255,255,0.05); border: 1px solid var(--border); }
-  .block-header-text { flex: 1; }
-  .block-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700; font-size: 1rem; letter-spacing: 0.04em; text-transform: uppercase;
-  }
-  .bl-warmup    { color: var(--gold); }
-  .bl-strength  { color: var(--fire-glow); }
-  .bl-oly       { color: var(--violet-light); }
-  .bl-metcon    { color: var(--teal-light); }
-  .bl-accessory { color: var(--text-secondary); }
-  .block-subtitle { font-size: 11.5px; color: var(--text-muted); margin-top: 2px; }
+  .bi-warmup { background: rgba(255,167,38,0.14); border: 1px solid rgba(255,167,38,0.15); }
+  .bi-oly { background: rgba(41,121,255,0.12); border: 1px solid rgba(41,121,255,0.13); }
+  .bi-strength { background: rgba(0,191,165,0.12); border: 1px solid rgba(0,191,165,0.13); }
+  .bi-metcon { background: rgba(255,61,0,0.15); border: 1px solid rgba(255,61,0,0.15); }
+  .bi-cardio { background: rgba(124,77,255,0.12); border: 1px solid rgba(124,77,255,0.12); }
+  .bi-accessory { background: rgba(144,164,174,0.1); border: 1px solid rgba(144,164,174,0.1); }
+  .block-header-text { flex: 1; min-width: 0; }
+  .block-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.05em; text-transform: uppercase; }
+  .bl-warmup { color: #FFA726; }
+  .bl-oly { color: #64B5F6; }
+  .bl-strength { color: var(--teal); }
+  .bl-metcon { color: #FF3D00; }
+  .bl-cardio { color: #B39DDB; }
+  .bl-accessory { color: #B0BEC5; }
+  .block-subtitle { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+  .block-check { flex-shrink: 0; display: flex; align-items: center; gap: 6px; }
+  .block-check input { width: 17px; height: 17px; accent-color: var(--teal); cursor: pointer; }
   .block-chevron { color: var(--text-muted); font-size: 12px; transition: transform 0.22s ease; flex-shrink: 0; }
   .block.collapsed .block-chevron { transform: rotate(-90deg); }
-  .block-body {
-    padding: 1rem 1.25rem;
-    display: flex; flex-direction: column; gap: 0;
-  }
+  .block-body { padding: 0.9rem 1.1rem; display: flex; flex-direction: column; gap: 0; }
   .block.collapsed .block-body { display: none; }
+
   /* ── SECTION LABEL ── */
-  .section-label {
-    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--text-muted);
-    margin: 0.9rem 0 0.5rem; padding-bottom: 5px;
-    border-bottom: 1px solid var(--border);
-  }
+  .section-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 0.85rem 0 0.45rem; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
   .section-label:first-child { margin-top: 0; }
+
   /* ── EXERCISE ROW ── */
-  .ex-row {
-    display: flex; gap: 12px; padding: 0.6rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    align-items: flex-start;
-  }
-  .ex-row:last-child { border-bottom: none; padding-bottom: 0; }
-  .ex-bullet {
-    width: 5px; height: 5px; border-radius: 50%;
-    background: var(--text-muted); flex-shrink: 0; margin-top: 8px;
-  }
-  .ex-name { font-size: 0.9rem; font-weight: 500; flex: 1; line-height: 1.5; color: var(--text-primary); }
-  .ex-detail {
-    font-size: 11.5px; color: var(--text-secondary);
-    text-align: right; flex-shrink: 0; line-height: 1.55; max-width: 170px;
-    min-width: 90px;
-  }
-  .ex-detail strong {
-    display: block; color: var(--gold); font-weight: 700; font-size: 13px;
-  }
-  /* ── COMPLEX ROW ── */
-  .ex-row.complex {
-    background: rgba(124,77,255,0.05);
-    border: 1px solid rgba(124,77,255,0.14);
-    border-radius: var(--radius-sm);
-    padding: 0.7rem 0.85rem; margin: 0.35rem 0;
-  }
-  /* ── COACH NOTE ── */
-  .coach-note {
-    background: rgba(255,214,0,0.05);
-    border-left: 2px solid rgba(255,214,0,0.45);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    padding: 0.7rem 0.95rem; margin-top: 0.8rem;
-    font-size: 12.5px; color: var(--text-secondary); line-height: 1.6;
-  }
-  .coach-note strong {
-    color: var(--gold); display: block; margin-bottom: 3px;
-    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
-  }
+  .ex-row { display: flex; gap: 10px; padding: 0.5rem 0.4rem; margin: 0 -0.4rem; border-bottom: 1px solid var(--border-subtle); align-items: flex-start; border-radius: 6px; transition: background 0.15s ease; }
+  .ex-row:hover { background: rgba(255,255,255,0.02); }
+  .ex-row:last-child { border-bottom: none; padding-bottom: 0.5rem; }
+  .ex-bullet { width: 5px; height: 5px; border-radius: 50%; background: var(--text-muted); flex-shrink: 0; margin-top: 7px; }
+  .ex-name { font-size: 0.875rem; font-weight: 500; flex: 1; line-height: 1.45; color: var(--text-primary); }
+  .ex-detail { font-size: 11.5px; color: var(--text-secondary); text-align: right; flex-shrink: 0; line-height: 1.55; max-width: 170px; min-width: 60px; }
+  .ex-detail strong { display: block; color: var(--text-primary); font-weight: 600; font-size: 13px; }
+  .ex-row.complex { background: rgba(255,61,0,0.04); border: 1px solid rgba(255,61,0,0.09); border-radius: var(--radius-sm); padding: 0.6rem 0.75rem; margin: 0.3rem 0; }
+  .ex-divider { display: flex; align-items: center; gap: 10px; margin: 0.3rem 0; color: var(--text-muted); font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+  .ex-divider::before, .ex-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* ── NOTES ── */
+  .coach-note { background: rgba(41,121,255,0.05); border-left: 2px solid rgba(41,121,255,0.4); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 0.65rem 0.9rem; margin-top: 0.75rem; font-size: 12.5px; color: #94A3B8; line-height: 1.6; }
+  .coach-note strong { color: #64B5F6; display: block; margin-bottom: 3px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .scaling-note { background: rgba(0,191,165,0.04); border-left: 2px solid rgba(0,191,165,0.4); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 0.65rem 0.9rem; margin-top: 0.5rem; font-size: 12.5px; color: #E2E8F0; line-height: 1.6; }
+  .scaling-note strong { color: var(--teal); display: block; margin-bottom: 3px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+
   /* ── BLOCK INSIGHTS ── */
-  .block-insights {
-    margin-top: 1.1rem;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    border: 1px solid transparent;
-  }
-  .block-insights.insights-warmup   { background: rgba(255,214,0,0.04); border-color: rgba(255,214,0,0.14); }
-  .block-insights.insights-strength { background: rgba(255,61,0,0.05);  border-color: rgba(255,61,0,0.16); }
-  .block-insights.insights-oly      { background: rgba(124,77,255,0.05); border-color: rgba(124,77,255,0.16); }
-  .block-insights.insights-metcon   { background: rgba(0,137,123,0.05);  border-color: rgba(0,137,123,0.18); }
-  .insights-header {
-    display: flex; align-items: center; gap: 7px;
-    padding: 0.6rem 0.9rem;
-    font-size: 9.5px; font-weight: 700; letter-spacing: 0.12em;
-    text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-  .insights-warmup   .insights-header { color: var(--gold); }
-  .insights-strength .insights-header { color: var(--fire-glow); }
-  .insights-oly      .insights-header { color: var(--violet-light); }
-  .insights-metcon   .insights-header { color: var(--teal-light); }
-  .insights-body { padding: 0.8rem 0.9rem; display: flex; flex-direction: column; gap: 0.65rem; }
-  .insight-item { display: flex; gap: 0.6rem; align-items: flex-start; }
+  .block-insights { margin-top: 1rem; border-radius: var(--radius-md); overflow: hidden; border: 1px solid transparent; }
+  .block-insights.insights-warmup { background: rgba(255,167,38,0.04); border-color: rgba(255,167,38,0.12); }
+  .block-insights.insights-oly { background: rgba(66,165,245,0.04); border-color: rgba(66,165,245,0.12); }
+  .block-insights.insights-strength { background: rgba(0,191,165,0.04); border-color: rgba(0,191,165,0.12); }
+  .block-insights.insights-metcon { background: rgba(255,61,0,0.05); border-color: rgba(255,61,0,0.15); }
+  .block-insights.insights-cardio { background: rgba(124,77,255,0.04); border-color: rgba(124,77,255,0.12); }
+  .block-insights.insights-accessory { background: rgba(144,164,174,0.04); border-color: rgba(144,164,174,0.12); }
+  .insights-header { display: flex; align-items: center; gap: 7px; padding: 0.55rem 0.85rem; font-size: 9.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .insights-warmup .insights-header { color: #FFA726; }
+  .insights-oly .insights-header { color: #64B5F6; }
+  .insights-strength .insights-header { color: var(--teal); }
+  .insights-metcon .insights-header { color: var(--fire-glow); }
+  .insights-cardio .insights-header { color: #B39DDB; }
+  .insights-accessory .insights-header { color: #B0BEC5; }
+  .insights-body { padding: 0.75rem 0.85rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .insight-item { display: flex; gap: 0.55rem; align-items: flex-start; }
   .insight-icon { font-size: 13px; flex-shrink: 0; margin-top: 1px; line-height: 1; }
   .insight-content { flex: 1; }
-  .insight-label {
-    font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--text-muted);
-    margin-bottom: 2px;
-  }
+  .insight-label { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 2px; }
   .insight-text { font-size: 12.5px; line-height: 1.55; color: var(--text-secondary); }
-  @media (max-width: 640px) {
-    nav { flex-wrap: wrap; row-gap: 8px; padding: 10px 0.75rem; height: auto; min-height: 70px; }
-    .nav-brand { gap: 10px; }
-    .nav-brand-text { font-size: 1.7rem; }
-    .nav-brand-tag { display: none; }
-    .nav-logo-icon { width: 38px; height: 38px; }
-    .nav-logo-icon svg { width: 18px; height: 18px; }
-    .nav-right { width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 6px; }
-    .day-tabs-wrap { top: auto; position: static; }
-    .hero { padding: 1.75rem 1rem 2rem; }
-    .hero-eyebrow { font-size: 11px; }
-    .hero-stats { gap: 0.6rem; }
-    .stat-pill { padding: 7px 12px; font-size: 12px; }
-    .progress-wrap { max-width: 100%; }
-    .mesociclo-box { margin: 1.5rem 1rem 0; padding: 1.25rem; }
-    .main { padding: 0 1rem 3rem; }
-    .day-header { padding-top: 1.5rem; }
-    .day-tab { min-width: 68px; padding: 0.7rem 0.85rem; }
+
+  /* ── TIMERS ── */
+  .timer-box { margin-top: 0.9rem; background: var(--bg-elevated); border: 2px solid var(--border); border-radius: var(--radius-md); padding: 18px 14px; text-align: center; box-shadow: var(--shadow-sm); transition: border-color .25s ease, box-shadow .25s ease; }
+  .timer-box.tb-work { border-color: rgba(255,61,0,0.45); box-shadow: var(--shadow-sm), 0 0 26px rgba(255,61,0,0.1) inset; }
+  .timer-box.tb-rest { border-color: rgba(0,191,165,0.45); box-shadow: var(--shadow-sm), 0 0 26px rgba(0,191,165,0.1) inset; }
+  .timer-box-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 700; margin-bottom: 8px; }
+  .timer-phase-tag { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(0.85rem, 3.2vw, 1.05rem); letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 20px; border-radius: 30px; color: #fff; margin-bottom: 10px; }
+  .timer-phase-tag.phase-work { background: linear-gradient(90deg, var(--fire), var(--fire-glow)); box-shadow: 0 0 20px rgba(255,61,0,0.4); }
+  .timer-phase-tag.phase-rest { background: linear-gradient(90deg, #00897B, var(--teal)); box-shadow: 0 0 20px rgba(0,191,165,0.35); }
+  .timer-phase-tag.phase-done { background: linear-gradient(90deg, var(--teal), #00897B); box-shadow: 0 0 20px rgba(0,191,165,0.35); }
+  .timer-seg-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: clamp(0.85rem, 3.4vw, 1.05rem); color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 2px; min-height: 1.3em; }
+  .timer-display { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(3.2rem, 17vw, 5rem); line-height: 1; letter-spacing: 0.01em; margin: 6px 0 14px; color: var(--text-primary); }
+  .timer-round-big { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(1.05rem, 4.2vw, 1.4rem); letter-spacing: 0.03em; color: var(--text-primary); margin-bottom: 10px; min-height: 1.3em; }
+  .timer-round-bar { height: 9px; background: rgba(255,255,255,0.08); border-radius: 6px; overflow: hidden; margin: 0 auto 18px; max-width: 320px; }
+  .timer-round-bar-fill { height: 100%; border-radius: 6px; width: 0%; transition: width 0.25s linear, background 0.25s ease; }
+  .timer-round-bar-fill.phase-work { background: linear-gradient(90deg, var(--fire), var(--fire-glow)); }
+  .timer-round-bar-fill.phase-rest { background: linear-gradient(90deg, #00897B, var(--teal)); }
+  .timer-controls { display: flex; gap: 8px; max-width: 380px; margin: 0 auto; }
+  .tbtn { flex: 1; border-radius: 10px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em; text-transform: uppercase; padding: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: 0.15s; border: 1px solid transparent; }
+  .tbtn:hover { transform: translateY(-1px); }
+  .tbtn:active { transform: scale(0.97); }
+  .tbtn-start { background: rgba(0,191,165,0.1); border-color: rgba(0,191,165,0.35); color: var(--teal); }
+  .tbtn-start:hover { border-color: rgba(0,191,165,0.55); box-shadow: 0 0 14px rgba(0,191,165,0.18); }
+  .tbtn-pause { background: rgba(255,214,0,0.08); border-color: rgba(255,214,0,0.3); color: var(--gold); }
+  .tbtn-reset { flex: 0 0 auto; background: var(--bg-card); border-color: var(--border); color: var(--text-muted); padding: 13px 16px; }
+  .tbtn-reset:hover { border-color: rgba(255,255,255,0.2); color: var(--text-secondary); }
+  .hide { display: none !important; }
+  .wake-indicator { display: inline-flex; align-items: center; gap: 4px; font-size: 9.5px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-top: 10px; opacity: 0; transition: opacity .3s ease; }
+  .wake-indicator.on { opacity: 1; color: var(--teal); }
+
+  .quick-timer { display: flex; align-items: center; justify-content: space-between; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; margin-top: 0.9rem; flex-wrap: wrap; gap: 8px; box-shadow: var(--shadow-sm); }
+  .quick-timer-btn { transition: all 0.15s ease; }
+  .quick-timer-btn:hover { border-color: rgba(255,167,38,0.55); box-shadow: 0 0 12px rgba(255,167,38,0.2); transform: translateY(-1px); }
+  .quick-timer-left { font-size: 0.8rem; color: var(--text-secondary); font-weight: 500; display: flex; align-items: center; gap: 8px; }
+  .quick-timer-display { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.3rem; }
+  .quick-timer-btn { background: rgba(255,167,38,0.12); border: 1px solid rgba(255,167,38,0.3); color: var(--orange); font-weight: 700; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.04em; padding: 8px 14px; border-radius: 8px; cursor: pointer; }
+
+  /* ── REST DAY VIEW ── */
+  .rest-view { text-align: center; padding: 3rem 1rem 1rem; color: var(--text-muted); }
+  .rest-view .rest-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .rest-view h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+  .rest-view p { max-width: 480px; margin: 0 auto; font-size: 0.88rem; line-height: 1.6; }
+  .rest-checklist { display: flex; flex-direction: column; gap: 8px; max-width: 320px; margin: 1.5rem auto 0; text-align: left; }
+  .rest-check-item { display: flex; gap: 10px; align-items: center; font-size: 13px; color: var(--text-secondary); background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 12px; }
+
+  /* ── SUMMARY / COOLDOWN ── */
+  .info-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.1rem 1.2rem; margin-top: 1rem; box-shadow: var(--shadow-sm); }
+  .info-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); font-weight: 700; margin-bottom: 0.6rem; }
+  .info-card p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+  .info-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .info-card li { font-size: 0.82rem; color: var(--text-secondary); display: flex; gap: 8px; line-height: 1.5; }
+  .info-card li span:first-child { color: var(--text-muted); flex-shrink: 0; }
+
+  /* ── CALC MODAL ── */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.75); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 300; padding: 20px; }
+  .modal-overlay.open { display: flex; animation: overlayFadeIn 0.2s ease; }
+  @keyframes overlayFadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); width: 100%; max-width: 380px; padding: 22px; box-shadow: var(--shadow-lg); animation: modalPop 0.25s cubic-bezier(0.34,1.56,0.64,1); }
+  @keyframes modalPop { from { opacity: 0; transform: scale(0.94) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+  .modal-close { transition: color 0.15s ease, transform 0.15s ease; }
+  .modal-close:hover { color: var(--text-primary); transform: rotate(90deg); }
+  .modal-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .modal-head h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.03em; display: flex; align-items: center; gap: 8px; }
+  .modal-head h2 .mh-icon { color: var(--fire-glow); }
+  .modal-close { background: transparent; border: none; color: var(--text-muted); font-size: 1.3rem; cursor: pointer; line-height: 1; }
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font-size: 0.68rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+  .field input, .field select { width: 100%; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; }
+  .field input:focus, .field select:focus { border-color: var(--fire); }
+  .calc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; max-height: 280px; overflow-y: auto; }
+  .calc-cell { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 9px; padding: 8px 4px; text-align: center; }
+  .calc-pct { font-size: 0.62rem; color: var(--text-muted); font-weight: 700; }
+  .calc-val { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; color: var(--fire-glow); font-size: 1.05rem; }
+  .calc-empty { grid-column: 1/-1; color: var(--text-muted); font-size: 0.78rem; padding: 10px 0; text-align: center; }
+
+  footer.site-footer { max-width: 1140px; margin: 2rem auto 0; padding: 1.5rem 1.25rem 0; text-align: center; border-top: 1px solid var(--border); }
+  footer.site-footer p { font-size: 0.72rem; color: var(--text-muted); margin: 2px 0; }
+  footer.site-footer b { color: var(--text-secondary); }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.75rem; }
+    .day-tab { min-width: 64px; padding: 0.65rem 0.7rem; }
     .tab-label { font-size: 9px; }
-    .block-label { font-size: 0.88rem; }
-    .ex-row { flex-direction: column; gap: 8px; }
-    .ex-detail { text-align: left; max-width: 100%; min-width: 100%; }
-    .day-complete-btn { font-size: 0.85rem; padding: 9px 18px; width: 100%; }
+    .block-label { font-size: 0.85rem; }
+    .ex-detail { max-width: 130px; min-width: 50px; }
+    .day-complete-btn { font-size: 0.82rem; padding: 9px 16px; }
+    .nav-right { gap: 4px; }
+    .nav-pill { padding: 5px 9px; font-size: 10px; }
+    .nav-logo { width: 38px; height: 38px; }
+    .nav-logo svg { width: 21px; height: 21px; }
+    .nav-wordmark { font-size: 1.32rem; }
   }
 </style>
 </head>
 <body>
+<div class="bg-glow"></div>
+<div class="bg-grid"></div>
 <nav>
   <a class="nav-brand" href="#">
-    <div class="nav-logo-icon">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="boltGrad" x1="4" y1="1" x2="19" y2="23" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#FFFFFF"/>
-            <stop offset="60%" stop-color="#FFF6E0"/>
-            <stop offset="100%" stop-color="#FFD600"/>
-          </linearGradient>
-        </defs>
-        <path fill="url(#boltGrad)" fill-rule="evenodd" clip-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z"/>
-      </svg>
+    <div class="nav-logo">
+      <svg viewBox="0 0 24 24"><path d="M13 2L4.09 12.99 12 12.01 11 22l8.91-10.99-7.91.98z"/></svg>
     </div>
-    <div class="nav-brand-wordmark">
-      <span class="nav-brand-text">COACH<span>&nbsp;JP</span></span>
-      <span class="nav-brand-tag">Performance System</span>
-    </div>
+    <span class="nav-wordmark">COACH<span>&nbsp;JP</span></span>
   </a>
   <div class="nav-right">
-    <span class="nav-badge">Emilia Navarro</span>
-    <span class="nav-badge secondary">CrossFit — 60' Fijo</span>
+    <span class="nav-pill athlete-pill active" style="cursor:default;">EMILIA</span>
+    <button class="nav-pill calc-pill" id="calcBtn">% 1RM</button>
   </div>
 </nav>
+
 <section class="hero">
-  <p class="hero-eyebrow">Performance Hub — Alumna: Emilia Navarro</p>
-  <h1>Entrenamiento de Alta Exigencia, <em>Tiempo Optimizado.</em></h1>
-  <p class="hero-sub">Estructuras compactas de alta densidad metabólica y CrossFit de Lunes a Viernes continuo — cada bloque respeta un tiempo fijo dentro de la hora de entreno.</p>
-  <div class="hero-stats">
-    <div class="stat-pill"><div class="stat-dot"></div><b>5</b>&nbsp;sesiones semanales estructuradas</div>
-    <div class="stat-pill"><div class="stat-dot" style="background:var(--gold)"></div><b>60'</b>&nbsp;— Duración fija por sesión</div>
-    <div class="progress-wrap">
-      <div class="progress-label"><span>Progreso semanal</span><b id="progress-pct">0%</b></div>
-      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
-    </div>
-    <button class="reset-btn" id="reset-progress" title="Borra los días marcados como completados">Reiniciar progreso</button>
-  </div>
-  <div class="mesociclo-box">
-    <h3>Estructura de la Semana: CrossFit de Alta Densidad</h3>
-    <p>Cinco sesiones continuas de <strong>60 minutos fijos</strong>, cada una dividida en bloques con tiempos definidos dentro de la hora — el reloj manda, no el volumen. Así se distribuye la semana:</p>
-    <ul id="mesociclo-weeks">
-      <li><span class="week-num">L</span><span><strong>Lunes:</strong> Back Squat Heavy Sets + Core &amp; Thoracic Accessory.</span></li>
-      <li><span class="week-num">M</span><span><strong>Martes:</strong> Intervals (Row &amp; GHD) + Push/Pull AMRAP.</span></li>
-      <li><span class="week-num">X</span><span><strong>Miércoles:</strong> Metcon Elite/RX + Gymnastics BMU Skill + Posterior Accessory.</span></li>
-      <li><span class="week-num">J</span><span><strong>Jueves:</strong> Barbell Cycling (Snatch) + Squat Complex + Interval Metcon.</span></li>
-      <li><span class="week-num">V</span><span><strong>Viernes:</strong> Heavy Sprint Metcon + Lower Body Accessory.</span></li>
-    </ul>
-    <div class="mesociclo-warning">
-      <strong>⚠️ NOTA DEL COACH:</strong> Formato de hora fija — si un bloque se corta por tiempo, se pasa al siguiente igual. La prioridad siempre es cerrar los 60 minutos completos, no completar cada set a cualquier costo.
-    </div>
-  </div>
+  <p class="brand-tagline">Profesor de Educación Física · Especialista en Desarrollo de Fuerza, Biomecánica y Alto Rendimiento Deportivo</p>
+  <p class="hero-eyebrow">Plan Individual — Emilia Navarro · Semana 1</p>
+  <h1 id="heroTitle">Nueva Base de <em>Fuerza.</em></h1>
+  <p class="hero-sub" id="heroSub">Mesociclo de fuerza e hipertrofia, semana 1. Entrenás de lunes a viernes; sábado y domingo son de descanso completo.</p>
 </section>
-<div class="day-tabs-wrap">
-  <div class="day-tabs" id="day-tabs">
-    <div class="day-tab active" data-day="0">
-      <span class="tab-name">LUN</span>
-      <span class="tab-label">Back Squat + Accessory</span>
-      <div class="day-dot"></div>
-    </div>
-    <div class="day-tab" data-day="1">
-      <span class="tab-name">MAR</span>
-      <span class="tab-label">Intervals + Push/Pull</span>
-      <div class="day-dot"></div>
-    </div>
-    <div class="day-tab" data-day="2">
-      <span class="tab-name">MIÉ</span>
-      <span class="tab-label">Metcon + Gymnastics</span>
-      <div class="day-dot"></div>
-    </div>
-    <div class="day-tab" data-day="3">
-      <span class="tab-name">JUE</span>
-      <span class="tab-label">Snatch + Metcon</span>
-      <div class="day-dot"></div>
-    </div>
-    <div class="day-tab" data-day="4">
-      <span class="tab-name">VIE</span>
-      <span class="tab-label">Heavy Sprint + Accessory</span>
-      <div class="day-dot"></div>
-    </div>
+
+<div class="week-tabs-wrap">
+  <div class="week-tabs" id="week-tabs"></div>
+</div>
+
+<div class="progress-bar-wrap">
+  <div class="progress-row">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    <span class="progress-count" id="progress-count">0%</span>
+    <span class="progress-label">completado</span>
   </div>
 </div>
-<div class="main">
-  <!-- ══════════ LUNES ══════════ -->
-  <div class="day-view active" id="day-0">
-    <div class="day-header">
-      <div class="day-title-group">
-        <div class="day-eyebrow">Lunes — Día 1 [⏱️ 60 Minutos]</div>
-        <div class="day-title">Back Squat Heavy Sets + Core &amp; Thoracic Accessory</div>
-        <div class="day-athletes"><span class="athlete-chip">⚡ Lower Strength</span></div>
-      </div>
-      <button class="day-complete-btn" data-day="0">Marcar día completo</button>
-    </div>
-    <div class="blocks-stack">
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-warmup">🔥</div>
-          <div class="block-header-text">
-            <div class="block-label bl-warmup">Warm Up &amp; Conditioning Flow (0:00 - 15:00)</div>
-            <div class="block-subtitle">5 Min cardio + Activación de cadena posterior + Leg Engine</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">Fase 1 — Cardio &amp; Activation (2 Rounds)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">5 Min Cardio Machine @ progressive effort + 20 Banded reverse crunches + 30 Banded hamstring curls + 10 Cossack squats + 30s GHD Sorenson hold</span><span class="ex-detail">Activación</span></div>
-          <div class="section-label">Fase 2 — Leg Engine Flow</div>
-          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">Assault Bike 1000m → 50 Box jump overs → Assault Bike 1000m → 50 Step ups (sin carga) → Assault Bike 1000m → 50 Air squats → Assault Bike 1000m → 50 Box jumps</span><span class="ex-detail">Continuous</span></div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-strength">🦵</div>
-          <div class="block-header-text">
-            <div class="block-label bl-strength">Block A: Back Squat Building &amp; Main Sets (15:00 - 45:00)</div>
-            <div class="block-subtitle">A2 Sets de construcción + A3 Main Sets de alta intensidad</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">A2 — Building Sets (Rest 60-90s e/sets)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">4 reps @ 50% | 3 reps @ 68% | 2 reps @ 75% | 2 reps @ 82% | 2 reps @ 88%</span><span class="ex-detail">Progresivo</span></div>
-          <div class="section-label">A3 — Main Sets (Opcional - Rest > 3:00)</div>
-          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">3 Sets x 2 Repeticiones @ 90% - 95% RM</span><span class="ex-detail"><strong>Carga Pesada</strong></span></div>
 
-          <div class="block-insights insights-strength">
-            <div class="insights-header">💡 Estrategia del Coach</div>
-            <div class="insights-body">
-              <div class="insight-item"><span class="insight-icon">🎯</span><div class="insight-content"><div class="insight-label">Objetivo</div><div class="insight-text">Los sets principales son sumamente desafiantes. Trabajá dentro de los rangos objetivo sin buscar un 2RM máximo absoluto para evitar el fallo. Mantené un bastón a mano en las pausas de 3' para ir preparando la movilidad de hombros para el snatch del jueves.</div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-accessory">🎯</div>
-          <div class="block-header-text">
-            <div class="block-label bl-accessory">Block B: Upper &amp; Thoracic Accessory (45:00 - 60:00)</div>
-            <div class="block-subtitle">2-4 Quality Sets · Descanso a necesidad</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">Calidad Postural Escapular</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Prone Y-Raises x 10 reps + Banded Thoracic Openers x 10 reps/lado + KB Halos x 20 reps (10 p/dirección)</span><span class="ex-detail">Calidad</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ══════════ MARTES ══════════ -->
-  <div class="day-view" id="day-1">
-    <div class="day-header">
-      <div class="day-title-group">
-        <div class="day-eyebrow">Martes — Día 2 [⏱️ 60 Minutos]</div>
-        <div class="day-title">Intervals (Row &amp; GHD) + Push/Pull AMRAP</div>
-        <div class="day-athletes"><span class="athlete-chip">⚡ Láctico &amp; Tracción</span></div>
-      </div>
-      <button class="day-complete-btn" data-day="1">Marcar día completo</button>
-    </div>
-    <div class="blocks-stack">
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-warmup">🔥</div>
-          <div class="block-header-text">
-            <div class="block-label bl-warmup">Warm Up Específico (0:00 - 12:00)</div>
-            <div class="block-subtitle">Row 40s/20s + Rounds progresivos de GHD</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">Calentamiento Progresivo</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Row 40s ON / 20s OFF (4-7 min) + 2 Rounds chill: 10-15 GHD (rango corto) + 3 Inchworm push ups + 10 Box jumps. 1 Round pace alto: Row 20 cals + 5 BBJO + 10 GHD + 5 BBJO</span><span class="ex-detail">Alineación</span></div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-metcon">💥</div>
-          <div class="block-header-text">
-            <div class="block-label bl-metcon">Block A: Cardio Intervals (12:00 - 45:00)</div>
-            <div class="block-subtitle">3 Minutos AMRAP : 3 Minutos Rest x 6 Sets</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">Trabajo de Ritmo y Densidad</div>
-          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">Row 15 Cals + 15 GHD Sit Ups + Max Reps Burpee Box Jump Overs (60/50cm)</span><span class="ex-detail">6 Sets</span></div>
+<div class="main" id="mainContent"></div>
 
-          <div class="block-insights insights-metcon">
-            <div class="insights-header">💥 Pacing Target</div>
-            <div class="insights-body">
-              <div class="insight-item"><span class="insight-icon">💡</span><div class="insight-content"><div class="insight-text">El objetivo es encarar el remo y los GHD a un ritmo que te permita entre 40 y 60 segundos finales para los burpees (~10 reps). Si en la ronda 1 no tenés 40s libres de burpees, ajustá a 12 Cals o 12 GHD. Sostené o incrementá la cantidad de BBJO en cada serie.</div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-strength">💪</div>
-          <div class="block-header-text">
-            <div class="block-label bl-strength">Block B: Push/Pull Strength &amp; Core (45:00 - 60:00)</div>
-            <div class="block-subtitle">AMRAP 10 Minutos + Finisher de Anillas</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">B1 — AMRAP 10' Compacto</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">3 Push Press @ 70%-75% + 3 Strict Pull Ups</span><span class="ex-detail">Continuo</span></div>
-          <div class="coach-note"><strong>Nota del Coach</strong>El Push Press se va a sentir pesado tras los intervalos de remo/GHD. Elegí una carga desafiante pero técnica.</div>
-          <div class="section-label">B3 — Finisher Anillas &amp; Bíceps (3 Rounds - Rest 1:1)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">20s Ring Support Hold + 20 Bicep 'Bayesian' Curls + Max Time Ring Support Hold</span><span class="ex-detail">Aislamiento</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ══════════ MIÉRCOLES ══════════ -->
-  <div class="day-view" id="day-2">
-    <div class="day-header">
-      <div class="day-title-group">
-        <div class="day-eyebrow">Miércoles — Día 3 [⏱️ 60 Minutos]</div>
-        <div class="day-title">Elite RX Metcon + Gymnastics &amp; Posterior Accessory</div>
-        <div class="day-athletes"><span class="athlete-chip">⚡ Metcon &amp; Core</span></div>
-      </div>
-      <button class="day-complete-btn" data-day="2">Marcar día completo</button>
-    </div>
-    <div class="blocks-stack">
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-warmup">🔥</div>
-          <div class="block-header-text">
-            <div class="block-label bl-warmup">Warm Up (0:00 - 10:00)</div>
-            <div class="block-subtitle">Pirámide de calorías progresiva</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">Cardio Flow</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">9 - 15 - 21 Reps: Cal Bike + Cal Row</span><span class="ex-detail">Fluido</span></div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-metcon">💥</div>
-          <div class="block-header-text">
-            <div class="block-label bl-metcon">Block A: Metcon Elite / RX Level (10:00 - 30:00)</div>
-            <div class="block-subtitle">5 Rounds For Time · Rest 1:00 e/rounds · Cap 20:00</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">5 Rondas por Tiempo</div>
-          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">10 Deadlifts (50kg) + 25 Wall Balls (6kg) + 75 Double Unders</span><span class="ex-detail">Rest 1:00</span></div>
+<footer class="site-footer">
+  <p><b>Coach JP</b> — Programación individual para Emilia Navarro</p>
+  <p>Semana 1 · Mesociclo Fuerza / Hipertrofia</p>
+</footer>
 
-          <div class="block-insights insights-metcon">
-            <div class="insights-header">💥 Indicaciones del Metcon</div>
-            <div class="insights-body">
-              <div class="insight-item"><span class="insight-icon">💡</span><div class="insight-content"><div class="insight-text">Combinación exigente de volumen. El descanso de 1 minuto debe permitirte encarar los peso muerto unbroken y mantener las wall balls sostenidas. Mantenete relajada en los dobles de soga.</div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-oly">🤸‍♀️</div>
-          <div class="block-header-text">
-            <div class="block-label bl-oly">Block B: Gymnastics BMU Skill (30:00 - 40:00)</div>
-            <div class="block-subtitle">EMOM x 8 Minutos · Habilidad en barra</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">Skill de Trabajo</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">1-3 Jumping Box Bar Muscle Ups (10-30 reps totales)</span><span class="ex-detail">EMOM 8'</span></div>
-          <div class="coach-note"><strong>Nota del Coach</strong>Elegí un número de repeticiones que te desafíe pero que puedas sostener con técnica limpia en todos los minutos.</div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-accessory">🦵</div>
-          <div class="block-header-text">
-            <div class="block-label bl-accessory">Block C: Posterior Accessory (40:00 - 60:00)</div>
-            <div class="block-subtitle">Fortalecimiento de cadena posterior</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">D1 — Every 90s x 5 Sets</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Reverse Hyperextension x 20 reps (Carga moderada)</span><span class="ex-detail">Cadena posterior</span></div>
-          <div class="section-label">D2 — Superserie Unilateral (3 Rounds)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">Curtsey Box Step Downs x 12 reps (6 p/pierna) + Banded Hamstring Curls x 30 reps</span><span class="ex-detail">Rest libre</span></div>
-        </div>
-      </div>
+<div id="calcModal" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-head">
+      <h2><span class="mh-icon">%</span> Calculadora 1RM</h2>
+      <button id="calcClose" class="modal-close">&times;</button>
     </div>
-  </div>
-  <!-- ══════════ JUEVES ══════════ -->
-  <div class="day-view" id="day-3">
-    <div class="day-header">
-      <div class="day-title-group">
-        <div class="day-eyebrow">Jueves — Día 4 [⏱️ 60 Minutos]</div>
-        <div class="day-title">Barbell Cycling + Squats Complex + Interval Metcon</div>
-        <div class="day-athletes"><span class="athlete-chip">⚡ Snatch &amp; Thrusters</span></div>
-      </div>
-      <button class="day-complete-btn" data-day="3">Marcar día completo</button>
+    <div class="field">
+      <label>1RM (kg)</label>
+      <input id="calcInput" type="number" inputmode="decimal" placeholder="Ej: 100" />
     </div>
-    <div class="blocks-stack">
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-warmup">🔥</div>
-          <div class="block-header-text">
-            <div class="block-label bl-warmup">Warm Up &amp; Snatch Build (0:00 - 10:00)</div>
-            <div class="block-subtitle">3 Sets cardio/hombro + Carga progresiva de Snatch</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">Alineación Dinámica</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">3 Sets: Row/Bike 90s easy + 10 BTN Snatch Grip Push Press + 15 Russian KB Swings. Luego: 4-6 sets x 3 reps TNG Power Snatch construyendo carga para A1.</span><span class="ex-detail">Preparación</span></div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-oly">🏋️‍♂️</div>
-          <div class="block-header-text">
-            <div class="block-label bl-oly">Block A: Barbell Cycling &amp; Squat Combo (10:00 - 32:00)</div>
-            <div class="block-subtitle">A1 EMOM Snatch + A2 Front &amp; Back Squat Complex</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">A1 — Barbell Cycling (EMOM x 10 Minutos)</div>
-          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">3 Power Snatches @ 75% RM (Permitido TNG)</span><span class="ex-detail">Carga Fija</span></div>
-          <div class="coach-note"><strong>Nota del Coach</strong>Mantené la misma carga los 10 minutos. Foco en fluidez y velocidad de extensión.</div>
-          <div class="section-label">A2 — Squat Complex (Every 2:30 x 6 Sets)</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">1 Front Squat + 2 Back Squats @ 85% RM</span><span class="ex-detail">6 Sets</span></div>
-          <div class="coach-note"><strong>Nota del Coach</strong>Hacé la Front Squat, apoyá la barra rápido en el rack, pasala a la espalda y ejecutá las 2 Back Squats de inmediato.</div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-metcon">💥</div>
-          <div class="block-header-text">
-            <div class="block-label bl-metcon">Block B: RX Metcon Intervals (32:00 - 52:00)</div>
-            <div class="block-subtitle">Every 8:00 x 3 Sets For Time (Salidas en 0:00, 8:00 y 16:00)</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">Tres Vueltas por Tiempo</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">10 Dual DB Thrusters + 15 Toes to Bar + 10 Dual DB Thrusters + 15 Pull Ups</span><span class="ex-detail">3 Intervalos</span></div>
-          <div class="coach-note"><strong>Nota del Coach</strong>Sprint continuo en cada ventana de 8 minutos. Guardá margen para mantener las Pull-ups limpias.</div>
-        </div>
-      </div>
-      <div class="block collapsed">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-accessory">🎯</div>
-          <div class="block-header-text">
-            <div class="block-label bl-accessory">Block C: Accessory Core &amp; Hip (52:00 - 60:00)</div>
-            <div class="block-subtitle">2-4 Quality Sets · Rest 60s</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">Core &amp; Cadena Posterior</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">GHD Bent-knee Hip Extensions x 6-10 reps + Single Leg Banded Reverse Crunches x 30 reps (15 p/pierna)</span><span class="ex-detail">Calidad</span></div>
-        </div>
-      </div>
+    <div class="field">
+      <label>Redondeo</label>
+      <select id="calcRound">
+        <option value="1">1 kg</option>
+        <option value="2.5" selected>2.5 kg</option>
+        <option value="5">5 kg</option>
+      </select>
     </div>
-  </div>
-  <!-- ══════════ VIERNES ══════════ -->
-  <div class="day-view" id="day-4">
-    <div class="day-header">
-      <div class="day-title-group">
-        <div class="day-eyebrow">Viernes — Día 5 [⏱️ 60 Minutos]</div>
-        <div class="day-title">Heavy Sprint Metcon + Lower Body Accessory</div>
-        <div class="day-athletes"><span class="athlete-chip">⚡ Sprint &amp; GHD</span></div>
-      </div>
-      <button class="day-complete-btn" data-day="4">Marcar día completo</button>
-    </div>
-    <div class="blocks-stack">
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-warmup">🔥</div>
-          <div class="block-header-text">
-            <div class="block-label bl-warmup">Warm Up (0:00 - 10:00)</div>
-            <div class="block-subtitle">3 Quality Sets de preparación dinámico-articular</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">Flujo de Activación</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">GHD Sorenson Hold x 30s + Banded Hamstring Curls x 30 reps + Squat Hold x 30s + Mountain Climbers x 30 reps</span><span class="ex-detail">3 Series</span></div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-metcon">💥</div>
-          <div class="block-header-text">
-            <div class="block-label bl-metcon">Block A: Heavy Sprint Metcon (10:00 - 40:00)</div>
-            <div class="block-subtitle">5 Rounds For Time · Cap 30:00</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">5 Rondas por Tiempo</div>
-          <div class="ex-row complex"><div class="ex-bullet"></div><span class="ex-name">24 DB Hang Snatches + 15 Cal Bike + 7 Front Squats from floor (40 kg)</span><span class="ex-detail">Heavy Sprint</span></div>
-
-          <div class="block-insights insights-metcon">
-            <div class="insights-header">💥 Indicaciones del Metcon</div>
-            <div class="insights-body">
-              <div class="insight-item"><span class="insight-icon">💡</span><div class="insight-content"><div class="insight-text">El WOD está pensado como un sprint pesado. Acelerá el ritmo en la bici sin especular; salir un poco tambaleante es parte del estímulo. Las Front Squats salen desde el piso haciendo un clean inicial y deben sostenerse unbroken.</div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="block">
-        <div class="block-header" onclick="toggleBlock(this)">
-          <div class="block-icon bi-accessory">🎯</div>
-          <div class="block-header-text">
-            <div class="block-label bl-accessory">Block B: Lower Body Accessory (40:00 - 55:00)</div>
-            <div class="block-subtitle">Superserie 4 Rondas · Rest 90s e/sets</div>
-          </div>
-          <span class="block-chevron">▼</span>
-        </div>
-        <div class="block-body">
-          <div class="section-label">Hipertrofia de Cadena Inferior</div>
-          <div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">GHD Bent Knee Hip Extensions x 6-10 reps + DB Leg Extensions x 20 reps</span><span class="ex-detail">4 Series</span></div>
-          <div class="coach-note"><strong>Nota del Coach</strong>Mantené la bajada excéntrica de las Leg Extensions bajo control de 2-3 segundos. ¡Fin del entrenamiento semanal!</div>
-        </div>
-      </div>
-    </div>
+    <div id="calcTable" class="calc-grid"><p class="calc-empty">Ingresá tu 1RM para ver la tabla.</p></div>
   </div>
 </div>
+
 <script>
-(function() {
-  'use strict';
-  const TOTAL_ACTIVE_DAYS = 5;
-  const STORAGE_KEY_COMPLETED = 'jp_completed_days_emilia';
-  const STORAGE_KEY_COLLAPSED = 'jp_collapsed_blocks_emilia';
-  const completedDays = new Set();
-  function saveCompleted() {
-    try {
-      localStorage.setItem(STORAGE_KEY_COMPLETED, JSON.stringify([...completedDays]));
-    } catch(e) {}
-  }
-  function loadCompleted() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY_COMPLETED);
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed)) parsed.forEach(d => completedDays.add(Number(d)));
-      }
-    } catch(e) {}
-  }
-  function saveCollapsed(blockEl, id) {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY_COLLAPSED) || '{}';
-      const map = JSON.parse(raw);
-      map[id] = blockEl.classList.contains('collapsed');
-      localStorage.setItem(STORAGE_KEY_COLLAPSED, JSON.stringify(map));
-    } catch(e) {}
-  }
-  function loadCollapsed() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY_COLLAPSED);
-      return raw ? JSON.parse(raw) : {};
-    } catch(e) { return {}; }
-  }
-  function getBlockId(blockEl) {
-    const dayView = blockEl.closest('.day-view');
-    const dayId = dayView ? dayView.id : 'unknown';
-    const blocks = dayView ? [...dayView.querySelectorAll('.block')] : [];
-    const idx = blocks.indexOf(blockEl);
-    return dayId + '_block_' + idx;
-  }
-  window.toggleBlock = function(header) {
-    const block = header.parentElement;
-    block.classList.toggle('collapsed');
-    const id = getBlockId(block);
-    saveCollapsed(block, id);
-  };
-  function restoreCollapsed() {
-    const map = loadCollapsed();
-    document.querySelectorAll('.block').forEach(block => {
-      const id = getBlockId(block);
-      if (id in map) {
-        if (map[id]) block.classList.add('collapsed');
-        else block.classList.remove('collapsed');
-      }
-    });
-  }
-  function updateProgress() {
-    const done = completedDays.size;
-    const pct = Math.round((done / TOTAL_ACTIVE_DAYS) * 100);
-    document.getElementById('progress-fill').style.width = pct + '%';
-    document.getElementById('progress-pct').textContent = pct + '% · ' + done + '/' + TOTAL_ACTIVE_DAYS + ' días';
-  }
-  function applyCompletedState(dayIdx) {
-    const isDone = completedDays.has(dayIdx);
-    const btn = document.querySelector('.day-complete-btn[data-day="' + dayIdx + '"]');
-    const tab = document.querySelector('.day-tab[data-day="' + dayIdx + '"]');
-    if (btn) {
-      btn.textContent = isDone ? '✓ Día completado' : 'Marcar día completo';
-      btn.classList.toggle('done', isDone);
+/* =========================================================
+   DATA MODEL
+   category → bi-warmup / bi-oly / bi-strength / bi-metcon / bi-cardio / bi-accessory
+========================================================= */
+const WEEK = [
+{
+  id:'lunes', short:'LUN', label:'Empuje + Core', dayNum:1, name:'LUNES',
+  title:'Pushing Strength + Engine Circuit + Core',
+  availability:{ emilia:'train' },
+  blocks:[
+    { id:'warmup', category:'warmup', icon:'🔥', title:'Warm Up & Activación', subtitle:'Bike/Row + Push-ups + Dip holds',
+      items:[
+        '3 Rounds: Bike/Row 250m + 10 Push ups + 5s Bottom dip hold + 5s Top dip hold',
+        '5 min: 3 series de ring dips livianas para terminar de activar'
+      ],
+      tips:'El foco es activar bien hombro y codo antes de la carga pesada de empuje. Si notás rigidez o poca movilidad, sumá 1 round extra antes del bloque principal.'
+    },
+    { id:'push', category:'strength', icon:'💪', title:'Block A: Pushing Strength', subtitle:'4 series de calidad · Dips + Incline DB Press',
+      items:[
+        '3 Strict (weighted) dips — carga moderada, progresión gradual serie a serie',
+        '8 Dual DB incline bench press — carga moderada, tempo controlado',
+        '20 Banded tricep extensions — descanso lo necesario entre sets'
+      ],
+      tips:'Calentá bien si vas a sumar peso en los fondos. Movete entre ejercicios con el mínimo descanso necesario y guardá el descanso más largo para el final de cada serie completa. Si todavía no dominás los dips estrictos, usá banda de asistencia (5 reps).',
+      objective:'Construir una base sólida de fuerza de empuje horizontal, con volumen extra orientado a hipertrofia de pecho y tríceps.',
+      quickRest:{ label:'Descanso entre series', seconds:90 }
+    },
+    { id:'intervals', category:'metcon', icon:'💥', title:'Block B: Intervals — Bike & Gymnastics', subtitle:'x6 rounds (3 de cada uno) · Rest 2:00',
+      items:[
+        '3 min AMRAP: Echo bike @ esfuerzo moderado-sostenible (75-80%)',
+        '— 2 min rest —',
+        '3 min AMRAP: 8 HSPU (o push-up piked), 7 Box jumps con step down, 5 Burpees',
+        '— 2 min rest —'
+      ],
+      tips:'Ritmo sostenible desde la primera ronda — nada de salir a fondo. Bici al 75-80% de esfuerzo, sumando calorías de forma pareja ronda a ronda.',
+      objective:'Acondicionamiento con habilidad gimnástica combinada a intensidad moderada.',
+      timer:{ segments:[
+          {label:'Echo Bike', duration:180, color:'fire'},
+          {label:'', duration:120, color:'muted', rest:true},
+          {label:'HSPU + Box + Burpee', duration:180, color:'teal'},
+          {label:'', duration:120, color:'muted', rest:true}
+        ], repeat:3 }
+    },
+    { id:'core', category:'accessory', icon:'🎯', title:'Block C: Core Accessory', subtitle:'D1 EMOM · D2-D3 Superset',
+      items:[
+        'D1 — EMOM x5 min: DB sit-up with straight legs x20s (iniciar doblando hombros desde el suelo)',
+        'D2 — Superset 3 rounds: Gymnastic swimming x45s + Deadbug x30 reps — Rest 90s',
+        'D3 — Superset 3 rounds: Side plank pulses x20/lado + leg raises x10/lado + rotations x5/lado — Rest 90s'
+      ],
+      tips:'Control respiratorio en todo el bloque; evitar compensar con la zona lumbar.',
+      timer:{ segments:[
+          {label:'DB Sit-up', duration:20, color:'teal'},
+          {label:'', duration:40, color:'muted', rest:true}
+        ], repeat:5 }
     }
-    if (tab) {
-      tab.classList.toggle('completed-day', isDone);
+  ],
+  summary:'El lunes combina fuerza de empuje horizontal con volumen de hipertrofia, un circuito de intervalos con habilidad gimnástica y un bloque de core con foco en control y respiración.',
+  cooldown:['Estiramiento de pectoral en marco de puerta 2x30s por lado','Dislocaciones de hombro con banda 2x10','Foam roller en dorsal ancho y tríceps, 1 min por zona','Respiración diafragmática 2 min']
+},
+{
+  id:'martes', short:'MAR', label:'Cleans + Metcon', dayNum:2, name:'MARTES',
+  title:'Cleans + Cadena Posterior + Metcon',
+  availability:{ emilia:'train' },
+  blocks:[
+    { id:'warmup', category:'warmup', icon:'🔥', title:'Warm Up Técnico', subtitle:'Bike + Barra vacía + Aproximación a A1',
+      items:[
+        'Bike 500m + Rest 15s x6 sets @ paces crecientes',
+        '2 sets barra vacía: 10 hang muscle cleans, 10 deadlifts, 10 front squats, 5 squat cleans from the hip',
+        '5 sets: 1 Clean + 2 hang squat cleans construyendo técnico hacia A1'
+      ],
+      tips:'Calentamiento técnico, no intenso — no hace falta escalar pesado el clean acá.'
+    },
+    { id:'cleans', category:'oly', icon:'🏋️‍♂️', title:'Block A: Cleans', subtitle:'A1 Construcción 15 min · A2 5 sets @ 85%',
+      items:[
+        'A1 — En 15 min, construí hacia ~80-85% de tu último máximo conocido: 1 Clean (cualquier variante) + 2 hang squat cleans. No es test de máximo diario.',
+        'A2 — 5 sets del mismo complex @ 85% de lo construido en A1. Rest 60s entre sets.'
+      ],
+      tips:'No busques un PR hoy: construí técnico hasta el porcentaje objetivo y quedate ahí, priorizando la calidad de cada levantamiento.',
+      objective:'Mantener destreza técnica olímpica y volumen de calidad a intensidad submáxima.',
+      timer:{ segments:[{label:'Clean + Hang Squat Clean', duration:900, color:'blue'}], repeat:1 },
+      quickRest:{ label:'A2 — Descanso entre sets (60s) · tocá "Iniciar" después de cada set', seconds:60 }
+    },
+    { id:'posterior', category:'strength', icon:'🦵', title:'Block B: Posterior Chain', subtitle:'B1 Sumo Deadlift 4RM · B2 Banda TNG',
+      items:[
+        'B1 — Sumo deadlift: construí a un 4RM sólido (~85% de tu último 4RM conocido), not TNG',
+        'B2 — 3 sets x10 reps con banda de resistencia (TNG permitido) @75% del máximo de hoy. Rest 90s entre sets.'
+      ],
+      tips:'No busques fallo absoluto en B1; priorizá técnica limpia en cada repetición.',
+      objective:'Volumen de hipertrofia en isquiotibiales, glúteo y erectores sin comprometer la técnica.',
+      quickRest:{ label:'Descanso B2 (90s)', seconds:90 }
+    },
+    { id:'metcon', category:'metcon', icon:'💥', title:'Metcon · RX Level', subtitle:'5 Rounds for time',
+      items:[
+        '15m barbell front rack lunge walk 35kg',
+        '10 bar facing burpees',
+        '5 strict HSPU (o push-up piked si hace falta escalar)'
+      ],
+      tips:'Ritmo sostenible desde la primera ronda, sin buscar un tiempo de referencia nuevo hoy.',
+      objective:'Estímulo metabólico y de core combinado con carga de barra moderada.',
+      stopwatch:true
+    },
+    { id:'accessory', category:'accessory', icon:'🎯', title:'Accessory Circuit', subtitle:'2 rounds',
+      items:['20m farmer carry (heavy) + 10 strict toes to bar + 20 DB leg extensions — descanso lo necesario entre sets'],
+      objective:'Volumen accesorio de agarre, core y cuádriceps para cerrar el día.'
     }
+  ],
+  summary:'El martes es el día más exigente a nivel técnico y neuromuscular de la semana: clean, cadena posterior pesada y un metcon con carga de barra.',
+  cooldown:['Estiramiento de cuádriceps y flexor de cadera 2x30s por lado','Foam roll isquios/glúteo 1 min por zona','Postura de niño (child’s pose) 1 min','Respiración diafragmática 2 min']
+},
+{
+  id:'miercoles', short:'MIÉ', label:'Snatch + Front Squat', dayNum:3, name:'MIÉRCOLES',
+  title:'Snatch + Front Squats + Metcon',
+  availability:{ emilia:'train' },
+  blocks:[
+    { id:'warmup', category:'warmup', icon:'🔥', title:'Warm Up Oly Prep', subtitle:'Barra vacía + carga liviana',
+      items:[
+        '3 sets: Row 10 cals, 5 KB Windmills por brazo, 1 Turkish get up por brazo',
+        '2 sets barra vacía: 7 Muscle snatch, 7 BTN push press, 7 Overhead squats',
+        '2 sets carga liviana: 3 Power snatch, 3 Overhead squats, 3 High hang squat snatch'
+      ]
+    },
+    { id:'snatch', category:'oly', icon:'🏋️‍♂️', title:'Block A: Snatch', subtitle:'0-10 min build · 10-20 min Every 2:00 x5',
+      items:[
+        '0:00-10:00 — Construí hacia tu 80% o la carga que elijas para comenzar',
+        '10:00-20:00 — Every 2:00 x5 sets: Squat snatch every 20s x3 (levantás en 0, 0:20 y 0:40)',
+        'Target load: 80% - 83% - 86% - 89% - 92%'
+      ],
+      tips:'La carga es solo una guía; el objetivo real es 15 de 15 levantamientos sin fallos, no llegar al techo de la escalera a cualquier costo.',
+      objective:'Mantener el patrón técnico y la densidad de trabajo del snatch a intensidad alta pero controlada.',
+      timer:{ segments:[{label:'Snatch — Construcción técnica', duration:600, color:'blue'}], repeat:1 },
+      timer2:{ label:'Every 2:00 x5 — Squat Snatch x3', segments:[{label:'Squat Snatch x3', duration:120, color:'blue'}], repeat:5 }
+    },
+    { id:'metcon', category:'metcon', icon:'💥', title:'Metcon · RX Version', subtitle:'20 min AMRAP',
+      items:[
+        '9 power snatch 35kg',
+        '15 TTB',
+        '21 wall balls',
+        'Movimiento alt.: single arm DB snatch, 18 reps por ronda (alternadas), peso moderado'
+      ],
+      tips:'Ritmo suave y consistente: singles relativamente rápidos en el snatch y sets repetibles en el TTB. No te esfuerces de más en las primeras rondas.',
+      objective:'Test de ritmo y estado físico general a lo largo de 20 minutos continuos.',
+      timer:{ segments:[{label:'AMRAP', duration:1200, color:'fire'}], repeat:1 }
+    },
+    { id:'frontsquat', category:'strength', icon:'🦵', title:'Block B: Front Squats', subtitle:'Every 2:00 x5 sets',
+      items:['3 Front squats @ 80% con 3s pausa en rep 1'],
+      tips:'Mantené la primera repetición en la posición inferior 3 segundos completos con buena tensión corporal, y buena velocidad en las reps 2 y 3.',
+      objective:'Consolidar la sentadilla frontal como pilar de fuerza de tren inferior.',
+      timer:{ segments:[{label:'Front Squat x3 (pausa 3s)', duration:120, color:'teal'}], repeat:5 }
+    },
+    { id:'knee', category:'accessory', icon:'🎯', title:'Accessory · Knee Health', subtitle:'3 Supersets · Rest 90s',
+      items:['Cossack squats x6/pierna + Negative box step downs x6/pierna (lento en el descenso) + Nordic curls x6 reps'],
+      objective:'Salud articular de rodilla y volumen extra de isquios y cuádriceps.',
+      quickRest:{ label:'Descanso (90s)', seconds:90 }
+    }
+  ],
+  summary:'El miércoles es el día de mayor exigencia técnica olímpica de la semana: snatch a intensidad alta, un AMRAP largo de 20 minutos y fuerza de sentadilla frontal.',
+  cooldown:['Sentadilla profunda sostenida y asistida (tobillo/cadera) 1-2 min','Foam roll cuádriceps/glúteo 1 min por zona','Movilidad de muñeca/hombro (por el front rack) 2 min','Respiración diafragmática 2 min']
+},
+{
+  id:'jueves', short:'JUE', label:'Tirón + Push', dayNum:4, name:'JUEVES',
+  title:'Tirón + Empuje Vertical',
+  availability:{ emilia:'train' },
+  blocks:[
+    { id:'warmup', category:'warmup', icon:'🔥', title:'Warm Up', subtitle:'Assault bike + Thrusters + Burpees',
+      items:[
+        '2 rounds: Assault bike 60s @ easy, 20 Air squats, 10 Barbell push press pausa en overhead',
+        '2 rounds: Assault bike 45s @ moderado, 15 (empty) barbell thrusters',
+        '2 rounds: Assault bike 30s @ hard, 5 Thrusters @ carga del WOD, 5 Bar facing burpees — Rest 60s'
+      ]
+    },
+    { id:'smash', category:'metcon', icon:'💥', title:'Thruster Ladder', subtitle:'15 min AMRAP — escalera ascendente',
+      items:[
+        'Escalera ascendente: 3, 6, 9, 12 Thrusters + Bar facing burpees — al completar 12 reiniciá en 3',
+        'Load: 30kg'
+      ],
+      tips:'Ritmo controlado desde la primera ronda; el objetivo es sostenerlo, no salir rápido y colapsar en la tercera vuelta de la escalera.',
+      objective:'Condicionamiento de alta intensidad combinando fuerza de pierna y fatiga de tren superior.',
+      timer:{ segments:[{label:'AMRAP', duration:900, color:'fire'}], repeat:1 }
+    },
+    { id:'pulling', category:'strength', icon:'💪', title:'Block A: Pulling Strength', subtitle:'3 sets · Rest 2:00',
+      items:[
+        '3 (Weighted) strict pull-ups — técnica limpia por sobre la carga',
+        '10 Dual DB prone rows (heavy)',
+        '3 Rope climbs (regular)'
+      ],
+      tips:'Si tenés capacidad de dominadas estrictas con peso, calentá completamente antes de empezar. Si todavía no llegás a la variante con lastre, usá banda de asistencia liviana manteniendo el mismo esquema de series.',
+      objective:'Fuerza de tracción vertical y horizontal combinada en un mismo bloque.',
+      quickRest:{ label:'Descanso entre series (2:00)', seconds:120 }
+    },
+    { id:'pushend', category:'strength', icon:'🤸', title:'Block B: Pushing Endurance', subtitle:'EMOM x10 min · 2 reps HSPU',
+      items:[
+        'Strict HSPU regular (o push-up piked si hace falta escalar) — 2 reps por ronda'
+      ],
+      tips:'Sostené la técnica limpia las 10 rondas completas, sin grandes caídas de calidad hacia el final.',
+      timer:{ segments:[{label:'HSPU (2 reps)', duration:60, color:'teal'}], repeat:10 }
+    },
+    { id:'accessory', category:'accessory', icon:'🎯', title:'Accessory', subtitle:'D1 Superset · D2 Rounds',
+      items:[
+        'D1 — Superset 3 rounds: Dual DB Zottman curls x8, Banded pec flys x15 — Rest 60s',
+        'D2 — 4 rounds: Ring support hold x20s, DB External rotations x10, Banded face pull x10 — Rest 60s'
+      ],
+      tips:'Mantené las rotaciones externas de D2 livianas y con buena técnica — es un bloque de salud de hombro, no de carga máxima.',
+      quickRest:{ label:'Descanso (60s)', seconds:60 }
+    }
+  ],
+  summary:'El jueves suma un WOD de alta intensidad tipo escalera, un bloque de tracción, un EMOM de HSPU y accesorio de hombro.',
+  cooldown:['Estiramiento de dorsal ancho (colgado suave) 2x30s','Movilidad de hombro en banda (rotaciones externas livianas) 2x10','Foam roll bíceps/dorsal 1 min por zona','Respiración diafragmática 2 min']
+},
+{
+  id:'viernes', short:'VIE', label:'Engine + Clean', dayNum:5, name:'VIERNES',
+  title:'Engine + Power Clean + Intervals',
+  availability:{ emilia:'train' },
+  blocks:[
+    { id:'warmup', category:'warmup', icon:'🔥', title:'Warm Up', subtitle:'Row + Shuttle runs',
+      items:['Row 2 min @ easy + 10 Shuttle runs @ easy','Row 2 min @ moderado + 10 Shuttle runs @ moderado']
+    },
+    { id:'cardio', category:'cardio', icon:'⏱️', title:'Block A: Cardio Starter', subtitle:'EMOM x20 min',
+      items:[
+        'Min 1: 9 Cal row (o 40s moderate)',
+        'Min 2: 5 Shuttle runs (o 40s moderate)',
+        'Min 3: 11 Cal row (o 50s medio-alto)',
+        'Min 4: 8 Shuttle runs (o 50s medio-alto)'
+      ],
+      tips:'Dos minutos a esfuerzo más bajo (dejando ~20s de descanso) y dos a esfuerzo más duro (dejando ~10s). Que el ritmo sea sostenible en las cuatro rondas, sin salir a fondo desde el arranque.',
+      objective:'Construir base aeróbica combinando remo y desplazamientos cortos de alta cadencia.',
+      timer:{ segments:[
+        {label:'Row (moderado)', duration:60, color:'muted'},
+        {label:'Shuttle (moderado)', duration:60, color:'muted'},
+        {label:'Row (medio-alto)', duration:60, color:'orange'},
+        {label:'Shuttle (medio-alto)', duration:60, color:'orange'}
+      ], repeat:5 }
+    },
+    { id:'powerclean', category:'oly', icon:'🏋️‍♂️', title:'Block B: Power Clean', subtitle:'Construcción 15-20 min',
+      items:['Construí en 15-20 min hacia ~85-88% de tu último máximo conocido, sin buscar un PR del día'],
+      tips:'Método preferido: EMOM. Subí de a saltos chicos de peso para preparar mejor el cuerpo y acumular volumen en zona submáxima.',
+      objective:'Trabajo técnico a intensidad alta pero submáxima, priorizando consistencia en la barra.',
+      timer:{ segments:[{label:'Power Clean — Construcción técnica', duration:1200, color:'blue'}], repeat:1 }
+    },
+    { id:'intervals', category:'metcon', icon:'💥', title:'Block C: Intervals', subtitle:'Every 10:00 x3 sets, for time',
+      items:[
+        '12 Power cleans 40kg (3x4 TNG)',
+        '10 Bar parallette dips o parallette push ups',
+        '12 Power cleans 40kg (pueden ser singles)',
+        '15 Bar facing burpees'
+      ],
+      tips:'Objetivo: ~5 min de trabajo y 5 de descanso por serie. Si la primera serie supera los 5 minutos, ajustá la carga o las reps en las siguientes dos.',
+      objective:'Alto volumen de empuje, tracción y fatiga de agarre en un formato de intervalos largos.',
+      timer:{ segments:[{label:'WOD — el resto de los 10:00 es descanso', duration:600, color:'fire'}], repeat:3 }
+    },
+    { id:'accessory', category:'accessory', icon:'🎯', title:'Accessorio', subtitle:'2 sets',
+      items:['Dual DB Zottman curls x8 + Seated banded low rows x20 — Rest 60s entre sets'],
+      objective:'Volumen accesorio de brazo y espalda para cerrar la semana.',
+      quickRest:{ label:'Descanso (60s)', seconds:60 }
+    }
+  ],
+  summary:'El viernes cierra la semana de entrenamiento con el mayor volumen de trabajo: cardio starter, power clean, intervalos largos de alta demanda y accesorio.',
+  cooldown:['Estiramiento general de tren inferior 3x20-30s','Movilidad de tobillo y cadera 2 min','Foam roll espalda alta/dorsal 1 min','Respiración diafragmática 2 min']
+}
+];
+
+const CATEGORY_META = {
+  warmup:{ cls:'bi-warmup', labelCls:'bl-warmup', insightsCls:'insights-warmup' },
+  oly:{ cls:'bi-oly', labelCls:'bl-oly', insightsCls:'insights-oly' },
+  strength:{ cls:'bi-strength', labelCls:'bl-strength', insightsCls:'insights-strength' },
+  metcon:{ cls:'bi-metcon', labelCls:'bl-metcon', insightsCls:'insights-metcon' },
+  cardio:{ cls:'bi-cardio', labelCls:'bl-cardio', insightsCls:'insights-cardio' },
+  accessory:{ cls:'bi-accessory', labelCls:'bl-accessory', insightsCls:'insights-accessory' }
+};
+
+const TIMER_COLORS = { fire:'#FF6D00', teal:'#00BFA5', blue:'#64B5F6', muted:'#8A8A8A', orange:'#FFA726' };
+
+/* =========================================================
+   STATE
+========================================================= */
+const state = { athlete:'emilia', currentDay:'lunes', completed:{}, overrideRest:{} };
+let timerCounter = 0;
+
+/* =========================================================
+   AUDIO
+========================================================= */
+function beep(freq, dur){
+  try{
+    if(!window._actx) window._actx = new (window.AudioContext||window.webkitAudioContext)();
+    const ctx = window._actx;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = freq || 880;
+    gain.gain.setValueAtTime(0.0001, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.25, ctx.currentTime + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + (dur||180)/1000);
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + (dur||180)/1000 + 0.02);
+  }catch(e){}
+}
+function fmt(sec){
+  sec = Math.max(0, Math.round(sec));
+  const m = Math.floor(sec/60), s = sec % 60;
+  return (m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+}
+
+/* =========================================================
+   WAKE LOCK MANAGER — keeps the screen on while any timer runs.
+   Uses the Screen Wake Lock API (needs HTTPS/localhost; silently
+   no-ops on unsupported browsers or file:// previews).
+========================================================= */
+const WakeLockManager = (function(){
+  let sentinel = null;
+  let count = 0;
+  const indicators = new Set();
+  function refreshIndicators(){
+    indicators.forEach(el=>el.classList.toggle('on', !!sentinel));
   }
-  document.querySelectorAll('.day-complete-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const day = parseInt(btn.dataset.day, 10);
-      if (completedDays.has(day)) {
-        completedDays.delete(day);
-      } else {
-        completedDays.add(day);
-      }
-      applyCompletedState(day);
-      updateProgress();
-      saveCompleted();
-    });
+  async function acquireSentinel(){
+    if(sentinel || !('wakeLock' in navigator)) return;
+    try{
+      sentinel = await navigator.wakeLock.request('screen');
+      sentinel.addEventListener('release', ()=>{ sentinel = null; refreshIndicators(); });
+      refreshIndicators();
+    }catch(e){ sentinel = null; }
+  }
+  function register(indicatorEl){ if(indicatorEl) indicators.add(indicatorEl); refreshIndicators(); }
+  function acquire(){ count++; acquireSentinel(); }
+  function release(){
+    count = Math.max(0, count-1);
+    if(count===0 && sentinel){ sentinel.release().catch(()=>{}); sentinel = null; refreshIndicators(); }
+  }
+  document.addEventListener('visibilitychange', ()=>{
+    if(document.visibilityState==='visible' && count>0) acquireSentinel();
   });
-  document.querySelectorAll('.day-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const idx = tab.dataset.day;
-      document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.day-view').forEach(v => v.classList.remove('active'));
-      tab.classList.add('active');
-      const target = document.getElementById('day-' + idx);
-      if (target) target.classList.add('active');
-    });
-  });
-  document.getElementById('reset-progress').addEventListener('click', () => {
-    if (!confirm('¿Reiniciar el progreso de los días completados?')) return;
-    completedDays.clear();
-    [0, 1, 2, 3, 4].forEach(applyCompletedState);
-    updateProgress();
-    saveCompleted();
-  });
-  loadCompleted();
-  [0, 1, 2, 3, 4].forEach(applyCompletedState);
-  updateProgress();
-  restoreCollapsed();
+  return { acquire, release, register };
 })();
+
+/* =========================================================
+   ITEM LINE PARSER → ex-row / section-label / divider
+========================================================= */
+function renderLine(text){
+  const dividerMatch = text.match(/^—\s*(.+?)\s*—$/);
+  if(dividerMatch) return `<div class="ex-divider">${dividerMatch[1]}</div>`;
+
+  const tagMatch = text.match(/^([A-Z][0-9])\s*—\s*(.+)$/);
+  if(tagMatch){
+    const isComplex = /constru/i.test(tagMatch[2]);
+    return `<div class="ex-row${isComplex?' complex':''}"><div class="ex-bullet"></div><span class="ex-name">${tagMatch[2]}</span><span class="ex-detail"><strong>${tagMatch[1]}</strong></span></div>`;
+  }
+  const opMatch = text.match(/^(Op\.\d+):\s*(.+)$/);
+  if(opMatch){
+    return `<div class="ex-row"><div class="ex-bullet"></div><span class="ex-name">${opMatch[2]}</span><span class="ex-detail"><strong>${opMatch[1]}</strong></span></div>`;
+  }
+  const dashSplit = text.split(' — ');
+  if(dashSplit.length === 2){
+    const isComplex = /constru/i.test(text);
+    return `<div class="ex-row${isComplex?' complex':''}"><div class="ex-bullet"></div><span class="ex-name">${dashSplit[0]}</span><span class="ex-detail">${dashSplit[1]}</span></div>`;
+  }
+  const isComplex = /constru/i.test(text);
+  return `<div class="ex-row${isComplex?' complex':''}"><div class="ex-bullet"></div><span class="ex-name">${text}</span></div>`;
+}
+
+/* =========================================================
+   SEGMENT TIMER
+========================================================= */
+class SegmentTimer{
+  constructor(root, segments, repeat){
+    this.root = root; this.segments = segments; this.repeat = repeat;
+    this.totalUnits = segments.length * repeat;
+    this.totalDuration = segments.reduce((sum,s)=>sum+s.duration,0) * repeat;
+    this.cumulativeBase = 0;
+    this.roundInfo = this.buildRoundInfo();
+    this.unitIndex = 0; this.elapsed = 0; this.running = false; this.rafId = null; this.lastTs = null;
+    this.build();
+  }
+  /* Distinguishes real work rounds from rest segments so the round counter
+     never counts a "Descanso" as if it were an exercise round. Segments
+     without any `rest:true` flag behave exactly as before (every segment
+     counts as a round — e.g. plain EMOMs). */
+  buildRoundInfo(){
+    const hasRest = this.segments.some(s=>s.rest);
+    const workPerCycle = hasRest ? this.segments.filter(s=>!s.rest).length : this.segments.length;
+    const workTotal = workPerCycle * this.repeat;
+    const info = [];
+    let workCounter = 0;
+    for(let r=0; r<this.repeat; r++){
+      for(const seg of this.segments){
+        if(hasRest && seg.rest){
+          const upcoming = workCounter + 1;
+          info.push({ label: workTotal>1 ? (upcoming>workTotal ? 'Descanso final' : ('Próx. Ronda '+upcoming+' / '+workTotal)) : '' });
+        } else {
+          workCounter++;
+          info.push({ label: workTotal>1 ? ('Ronda '+workCounter+' / '+workTotal) : '' });
+        }
+      }
+    }
+    return info;
+  }
+  currentSeg(){ return this.segments[this.unitIndex % this.segments.length]; }
+  build(){
+    this.root.insertAdjacentHTML('beforeend', `
+      <div class="timer-phase-tag phase-work">Trabajo</div>
+      <div class="timer-seg-name"></div>
+      <div class="timer-display">00:00</div>
+      <div class="timer-round-big"></div>
+      <div class="timer-round-bar"><div class="timer-round-bar-fill phase-work"></div></div>
+      <div class="timer-controls">
+        <button class="tbtn tbtn-start btn-start">▶ Iniciar</button>
+        <button class="tbtn tbtn-pause btn-pause hide">⏸ Pausa</button>
+        <button class="tbtn tbtn-reset btn-reset">↺</button>
+      </div>
+      <div class="wake-indicator">🔒 Pantalla activa</div>
+    `);
+    this.elPhase = this.root.querySelector('.timer-phase-tag');
+    this.elName = this.root.querySelector('.timer-seg-name');
+    this.elRoundBig = this.root.querySelector('.timer-round-big');
+    this.elBarFill = this.root.querySelector('.timer-round-bar-fill');
+    this.elTime = this.root.querySelector('.timer-display');
+    this.btnStart = this.root.querySelector('.btn-start');
+    this.btnPause = this.root.querySelector('.btn-pause');
+    this.btnReset = this.root.querySelector('.btn-reset');
+    this.btnStart.addEventListener('click', ()=>this.start());
+    this.btnPause.addEventListener('click', ()=>this.pause());
+    this.btnReset.addEventListener('click', ()=>this.reset());
+    WakeLockManager.register(this.root.querySelector('.wake-indicator'));
+    this.updateDisplay();
+  }
+  updateDisplay(){
+    const seg = this.currentSeg();
+    const remaining = seg.duration - this.elapsed;
+    const done = this.unitIndex >= this.totalUnits;
+    const isRest = !done && !!seg.rest;
+    this.elPhase.textContent = done ? 'Completo' : (isRest ? 'Descanso' : 'Trabajo');
+    this.elPhase.className = 'timer-phase-tag ' + (done ? 'phase-done' : (isRest ? 'phase-rest' : 'phase-work'));
+    this.elName.textContent = done ? '' : (seg.label || '');
+    this.elName.style.visibility = (!done && seg.label) ? 'visible' : 'hidden';
+    const info = this.roundInfo[Math.min(this.unitIndex, this.roundInfo.length-1)];
+    this.elRoundBig.textContent = done ? '' : (info ? info.label : '');
+    this.elTime.textContent = fmt(remaining>0?remaining:0);
+    this.root.classList.toggle('tb-work', !done && !isRest);
+    this.root.classList.toggle('tb-rest', !done && isRest);
+    const progressed = done ? this.totalDuration : (this.cumulativeBase + this.elapsed);
+    const frac = this.totalDuration>0 ? Math.min(1, progressed/this.totalDuration) : 0;
+    this.elBarFill.style.width = (frac*100)+'%';
+    this.elBarFill.className = 'timer-round-bar-fill ' + (done ? 'phase-rest' : (isRest ? 'phase-rest' : 'phase-work'));
+  }
+  start(){
+    if(this.running) return;
+    if(this.unitIndex >= this.totalUnits) this.reset();
+    this.running = true;
+    WakeLockManager.acquire();
+    this.btnStart.classList.add('hide'); this.btnPause.classList.remove('hide');
+    this.lastTs = performance.now();
+    const loop = (ts)=>{
+      if(!this.running) return;
+      const dt = (ts - this.lastTs)/1000; this.lastTs = ts; this.elapsed += dt;
+      const seg = this.currentSeg();
+      if(this.elapsed >= seg.duration){
+        this.cumulativeBase += seg.duration;
+        this.elapsed = 0; this.unitIndex++;
+        beep(this.unitIndex>=this.totalUnits?660:880, this.unitIndex>=this.totalUnits?400:180);
+        if(this.unitIndex >= this.totalUnits){
+          this.running = false; this.updateDisplay();
+          WakeLockManager.release();
+          this.btnPause.classList.add('hide'); this.btnStart.classList.remove('hide');
+          this.btnStart.textContent = '▶ Reiniciar';
+          return;
+        }
+      }
+      this.updateDisplay();
+      this.rafId = requestAnimationFrame(loop);
+    };
+    this.rafId = requestAnimationFrame(loop);
+  }
+  pause(){
+    if(!this.running) return;
+    this.running = false;
+    WakeLockManager.release();
+    if(this.rafId) cancelAnimationFrame(this.rafId);
+    this.btnPause.classList.add('hide'); this.btnStart.classList.remove('hide');
+    this.btnStart.textContent = '▶ Reanudar';
+  }
+  reset(){
+    if(this.running){ this.running = false; WakeLockManager.release(); }
+    if(this.rafId) cancelAnimationFrame(this.rafId);
+    this.unitIndex = 0; this.elapsed = 0; this.cumulativeBase = 0;
+    this.btnPause.classList.add('hide'); this.btnStart.classList.remove('hide');
+    this.btnStart.textContent = '▶ Iniciar';
+    this.updateDisplay();
+  }
+}
+
+/* =========================================================
+   STOPWATCH
+========================================================= */
+class Stopwatch{
+  constructor(root){ this.root = root; this.elapsed = 0; this.running = false; this.build(); }
+  build(){
+    this.root.insertAdjacentHTML('beforeend', `
+      <div class="timer-phase-tag phase-work">For Time</div>
+      <div class="timer-display">00:00</div>
+      <div class="timer-controls">
+        <button class="tbtn tbtn-start btn-start">▶ Iniciar</button>
+        <button class="tbtn tbtn-pause btn-pause hide">⏸ Parar</button>
+        <button class="tbtn tbtn-reset btn-reset">↺</button>
+      </div>
+      <div class="wake-indicator">🔒 Pantalla activa</div>
+    `);
+    this.elTime = this.root.querySelector('.timer-display');
+    this.btnStart = this.root.querySelector('.btn-start');
+    this.btnPause = this.root.querySelector('.btn-pause');
+    this.btnReset = this.root.querySelector('.btn-reset');
+    this.btnStart.addEventListener('click', ()=>this.start());
+    this.btnPause.addEventListener('click', ()=>this.pause());
+    this.btnReset.addEventListener('click', ()=>this.reset());
+    WakeLockManager.register(this.root.querySelector('.wake-indicator'));
+  }
+  start(){
+    if(this.running) return;
+    this.running = true;
+    WakeLockManager.acquire();
+    this.btnStart.classList.add('hide'); this.btnPause.classList.remove('hide');
+    this.lastTs = performance.now();
+    const loop = (ts)=>{
+      if(!this.running) return;
+      this.elapsed += (ts-this.lastTs)/1000; this.lastTs = ts;
+      this.elTime.textContent = fmt(this.elapsed);
+      this.rafId = requestAnimationFrame(loop);
+    };
+    this.rafId = requestAnimationFrame(loop);
+  }
+  pause(){
+    if(!this.running) return;
+    this.running = false;
+    WakeLockManager.release();
+    if(this.rafId) cancelAnimationFrame(this.rafId);
+    this.btnPause.classList.add('hide'); this.btnStart.classList.remove('hide');
+  }
+  reset(){
+    if(this.running){ this.running = false; WakeLockManager.release(); }
+    if(this.rafId) cancelAnimationFrame(this.rafId);
+    this.elapsed = 0; this.elTime.textContent = '00:00';
+    this.btnPause.classList.add('hide'); this.btnStart.classList.remove('hide');
+  }
+}
+
+/* =========================================================
+   QUICK REST TIMER
+========================================================= */
+function buildQuickTimer(root, seconds, label){
+  root.innerHTML = `
+    <div class="quick-timer-left">⏲ <span>${label}</span></div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span class="qt-display quick-timer-display">${fmt(seconds)}</span>
+      <button class="qt-btn quick-timer-btn">Iniciar</button>
+    </div>
+  `;
+  const display = root.querySelector('.qt-display');
+  const btn = root.querySelector('.qt-btn');
+  let remaining = seconds, rafId=null, lastTs=null, running=false;
+  btn.addEventListener('click', ()=>{
+    if(running) return;
+    if(remaining<=0) remaining = seconds;
+    running = true; btn.textContent = '...'; lastTs = performance.now();
+    WakeLockManager.acquire();
+    const loop = (ts)=>{
+      if(!running) return;
+      remaining -= (ts-lastTs)/1000; lastTs = ts;
+      if(remaining<=0){
+        remaining = 0; display.textContent = fmt(0); running = false;
+        btn.textContent = 'Reiniciar'; beep(660,400);
+        WakeLockManager.release();
+        return;
+      }
+      display.textContent = fmt(remaining);
+      rafId = requestAnimationFrame(loop);
+    };
+    rafId = requestAnimationFrame(loop);
+  });
+}
+
+/* =========================================================
+   RENDER
+========================================================= */
+const tabsWrap = document.getElementById('week-tabs');
+const main = document.getElementById('mainContent');
+
+function isRestForAthlete(day){ return day.availability[state.athlete] === 'rest'; }
+
+function renderTabs(){
+  tabsWrap.innerHTML = WEEK.map(d=>`
+    <div class="day-tab" data-day="${d.id}">
+      <span class="tab-name">${d.short}</span>
+      <span class="tab-label">${d.label}</span>
+      <div class="day-dot"></div>
+    </div>
+  `).join('');
+  tabsWrap.querySelectorAll('.day-tab').forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      state.currentDay = tab.dataset.day;
+      refreshTabs();
+      refreshDayVisibility();
+    });
+  });
+}
+
+function refreshTabs(){
+  tabsWrap.querySelectorAll('.day-tab').forEach(tab=>{
+    const day = WEEK.find(d=>d.id===tab.dataset.day);
+    tab.classList.toggle('active', tab.dataset.day === state.currentDay);
+    const restForAthlete = day.rest || (isRestForAthlete(day) && !state.overrideRest[day.id]);
+    tab.classList.toggle('rest-day', restForAthlete);
+    const total = day.blocks.length;
+    const done = day.blocks.filter(b=>state.completed[day.id+'__'+b.id]).length;
+    tab.classList.toggle('completed-day', total>0 && done===total);
+  });
+}
+
+function renderBlockBody(block){
+  let html = block.items.map(renderLine).join('');
+
+  if(block.timer){
+    const tid = 'timer-'+(timerCounter++);
+    html += `<div class="timer-box" id="${tid}"></div>`;
+    setTimeout(()=>{ new SegmentTimer(document.getElementById(tid), block.timer.segments, block.timer.repeat); }, 0);
+  }
+  if(block.timer2){
+    const tid2 = 'timer-'+(timerCounter++);
+    html += `<div class="timer-box" id="${tid2}"><p class="timer-box-label">${block.timer2.label}</p></div>`;
+    setTimeout(()=>{ new SegmentTimer(document.getElementById(tid2), block.timer2.segments, block.timer2.repeat); }, 0);
+  }
+  if(block.stopwatch){
+    const tid = 'timer-'+(timerCounter++);
+    html += `<div class="timer-box" id="${tid}"></div>`;
+    setTimeout(()=>{ new Stopwatch(document.getElementById(tid)); }, 0);
+  }
+  if(block.quickRest){
+    const tid = 'qt-'+(timerCounter++);
+    html += `<div class="quick-timer" id="${tid}"></div>`;
+    setTimeout(()=>{ buildQuickTimer(document.getElementById(tid), block.quickRest.seconds, block.quickRest.label); }, 0);
+  }
+  if(block.tips){
+    html += `<div class="coach-note"><strong>Coach Note</strong>${block.tips}</div>`;
+  }
+  if(block.objective){
+    const meta = CATEGORY_META[block.category] || CATEGORY_META.accessory;
+    html += `<div class="block-insights ${meta.insightsCls}">
+      <div class="insights-header">${block.icon} Objetivo &amp; Enfoque</div>
+      <div class="insights-body">
+        <div class="insight-item"><span class="insight-icon">🎯</span><div class="insight-content"><div class="insight-label">Objetivo</div><div class="insight-text">${block.objective}</div></div></div>
+      </div>
+    </div>`;
+  }
+  return html;
+}
+
+function renderBlock(day, block){
+  const key = day.id+'__'+block.id;
+  const done = !!state.completed[key];
+  const meta = CATEGORY_META[block.category] || CATEGORY_META.accessory;
+  const startCollapsed = block.category === 'accessory';
+  return `
+  <div class="block${startCollapsed?' collapsed':''}${done?' block-done':''}" data-block-key="${key}">
+    <div class="block-header">
+      <div class="block-icon ${meta.cls}">${block.icon||'•'}</div>
+      <div class="block-header-text">
+        <div class="block-label ${meta.labelCls}">${block.title}</div>
+        <div class="block-subtitle">${block.subtitle||''}</div>
+      </div>
+      <label class="block-check" title="Marcar como completado">
+        <input type="checkbox" class="block-check-input" ${done?'checked':''} data-key="${key}">
+      </label>
+      <span class="block-chevron">▼</span>
+    </div>
+    <div class="block-body">${renderBlockBody(block)}</div>
+  </div>`;
+}
+
+function renderDay(day){
+  let athleteChips = '';
+  if(!day.rest && day.availability.emilia === 'train'){
+    athleteChips = `<span class="athlete-chip">⚡ Emilia</span>`;
+  }
+
+  const total = day.blocks.length;
+  const doneCount = day.blocks.filter(b=>state.completed[day.id+'__'+b.id]).length;
+  const allDone = total>0 && doneCount===total;
+
+  if(day.rest){
+    return `
+    <div class="day-view ${day.id===state.currentDay?'active':''}" id="day-${day.id}">
+      <div class="day-header">
+        <div>
+          <div class="day-eyebrow">${day.name} — Día ${day.dayNum}</div>
+          <div class="day-title">${day.title}</div>
+        </div>
+      </div>
+      <div class="rest-view">
+        <div class="rest-icon">💤</div>
+        <h2>Día de Descanso Completo</h2>
+        <p>El sistema nervioso y muscular crece y se recupera en estos días, no solo entrenando. Aprovechalo para descansar de verdad.</p>
+        <div class="rest-checklist">
+          <div class="rest-check-item">💧 <span>Hidratación reforzada durante todo el día</span></div>
+          <div class="rest-check-item">😴 <span>Dormir 7-9h, priorizar sueño de calidad</span></div>
+          <div class="rest-check-item">🥩 <span>Buena ingesta proteica (~1.6-2g/kg)</span></div>
+        </div>
+      </div>
+      <div class="blocks-stack">
+        ${day.blocks.map(b=>renderBlock(day,b)).join('')}
+      </div>
+      ${day.summary?`<div class="info-card"><p class="info-card-title">Resumen del día</p><p>${day.summary}</p></div>`:''}
+    </div>`;
+  }
+
+  return `
+  <div class="day-view ${day.id===state.currentDay?'active':''}" id="day-${day.id}">
+    <div class="day-header">
+      <div>
+        <div class="day-eyebrow">${day.name} — Día ${day.dayNum}</div>
+        <div class="day-title">${day.title}</div>
+        <div class="day-athletes">${athleteChips}</div>
+      </div>
+      <button class="day-complete-btn ${allDone?'done':''}" data-day="${day.id}">${allDone?'✓ Día completado':'Marcar día completo'}</button>
+    </div>
+    <div class="blocks-stack">
+      ${day.blocks.map(b=>renderBlock(day,b)).join('')}
+    </div>
+    ${day.summary?`<div class="info-card"><p class="info-card-title">Resumen del día</p><p>${day.summary}</p></div>`:''}
+    ${day.cooldown && day.cooldown.length?`<div class="info-card"><p class="info-card-title">Cool-Down &amp; Movilidad</p><ul>${day.cooldown.map(c=>`<li><span>›</span><span>${c}</span></li>`).join('')}</ul></div>`:''}
+  </div>`;
+}
+
+function renderAll(){
+  main.innerHTML = WEEK.map(renderDay).join('');
+  wireBlockHeaders();
+  wireBlockChecks();
+  wireOverrideChecks();
+  wireDayCompleteButtons();
+  updateProgress();
+  refreshTabs();
+}
+
+function wireBlockHeaders(){
+  document.querySelectorAll('.block-header').forEach(header=>{
+    header.addEventListener('click', (e)=>{
+      if(e.target.closest('.block-check')) return;
+      header.closest('.block').classList.toggle('collapsed');
+    });
+  });
+}
+
+function wireBlockChecks(){
+  document.querySelectorAll('.block-check-input').forEach(chk=>{
+    chk.addEventListener('click', e=>e.stopPropagation());
+    chk.addEventListener('change', ()=>{
+      state.completed[chk.dataset.key] = chk.checked;
+      chk.closest('.block').classList.toggle('block-done', chk.checked);
+      updateProgress();
+      refreshTabs();
+      updateDayButton(chk.dataset.key.split('__')[0]);
+    });
+  });
+}
+
+function wireOverrideChecks(){
+  document.querySelectorAll('.override-check').forEach(chk=>{
+    chk.addEventListener('change', ()=>{
+      state.overrideRest[chk.dataset.day] = chk.checked;
+      renderAll();
+    });
+  });
+}
+
+function wireDayCompleteButtons(){
+  document.querySelectorAll('.day-complete-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const day = WEEK.find(d=>d.id===btn.dataset.day);
+      const total = day.blocks.length;
+      const doneCount = day.blocks.filter(b=>state.completed[day.id+'__'+b.id]).length;
+      const setTo = !(total>0 && doneCount===total);
+      day.blocks.forEach(b=>{ state.completed[day.id+'__'+b.id] = setTo; });
+      renderAll();
+    });
+  });
+}
+
+function updateDayButton(dayId){
+  const day = WEEK.find(d=>d.id===dayId);
+  if(!day) return;
+  const btn = document.querySelector(`.day-complete-btn[data-day="${dayId}"]`);
+  if(!btn) return;
+  const total = day.blocks.length;
+  const doneCount = day.blocks.filter(b=>state.completed[day.id+'__'+b.id]).length;
+  const allDone = total>0 && doneCount===total;
+  btn.classList.toggle('done', allDone);
+  btn.textContent = allDone ? '✓ Día completado' : 'Marcar día completo';
+}
+
+function refreshDayVisibility(){
+  document.querySelectorAll('.day-view').forEach(v=>{
+    v.classList.toggle('active', v.id === 'day-'+state.currentDay);
+  });
+}
+
+function updateProgress(){
+  let totalAll=0, doneAll=0;
+  WEEK.forEach(day=>{
+    if(day.rest) return;
+    const applicable = !isRestForAthlete(day) || state.overrideRest[day.id];
+    if(!applicable) return;
+    day.blocks.forEach(b=>{
+      totalAll++;
+      if(state.completed[day.id+'__'+b.id]) doneAll++;
+    });
+  });
+  const pct = totalAll? Math.round(doneAll/totalAll*100) : 0;
+  document.getElementById('progress-fill').style.width = pct+'%';
+  document.getElementById('progress-count').textContent = pct+'%';
+}
+
+/* =========================================================
+   % 1RM CALCULATOR MODAL
+========================================================= */
+const calcModal = document.getElementById('calcModal');
+document.getElementById('calcBtn').addEventListener('click', ()=>{ calcModal.classList.add('open'); computeCalc(); });
+document.getElementById('calcClose').addEventListener('click', ()=>{ calcModal.classList.remove('open'); });
+calcModal.addEventListener('click', (e)=>{ if(e.target===calcModal) calcModal.classList.remove('open'); });
+document.getElementById('calcInput').addEventListener('input', computeCalc);
+document.getElementById('calcRound').addEventListener('change', computeCalc);
+
+function computeCalc(){
+  const oneRM = parseFloat(document.getElementById('calcInput').value);
+  const round = parseFloat(document.getElementById('calcRound').value);
+  const table = document.getElementById('calcTable');
+  const pcts = [50,55,60,65,70,73,75,78,80,83,85,87,90,92,95,100];
+  if(!oneRM || oneRM<=0){
+    table.innerHTML = '<p class="calc-empty">Ingresá tu 1RM para ver la tabla.</p>';
+    return;
+  }
+  table.innerHTML = pcts.map(p=>{
+    const raw = oneRM * p/100;
+    const rounded = Math.round(raw/round)*round;
+    return `<div class="calc-cell"><div class="calc-pct">${p}%</div><div class="calc-val">${rounded}</div></div>`;
+  }).join('');
+}
+
+/* =========================================================
+   INIT
+========================================================= */
+renderTabs();
+renderAll();
 </script>
 </body>
 </html>
